@@ -1,0 +1,12 @@
+[ 2017-05-05T17:33:22+08:00 ] ::1 /tp3/index.php/view/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000068s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001110s ]
+ERR: 无法加载模块:View
+
+[ 2017-05-05T17:33:38+08:00 ] ::1 /tp3/index.php/view/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+ERR: 无法加载模块:View
+

@@ -1,0 +1,190 @@
+[ 2017-05-08T11:07:49+08:00 ] ::1 /tp3/index.php/Forum/MainPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+
+[ 2017-05-08T11:07:49+08:00 ] ::1 /tp3/index.php/Forum/MainPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
+
+[ 2017-05-08T11:08:15+08:00 ] ::1 /tp3/index.php/Forum/MainPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000886s ]
+
+[ 2017-05-08T11:09:31+08:00 ] ::1 /tp3/index.php/Forum/MainPost/tp3/Public/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+
+[ 2017-05-08T11:09:32+08:00 ] ::1 /tp3/index.php/Forum/MainPost/tp3/Public/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+
+[ 2017-05-08T11:09:36+08:00 ] ::1 /tp3/index.php/Forum/MainPost/tp3/Public/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+
+[ 2017-05-08T11:09:37+08:00 ] ::1 /tp3/index.php/Forum/MainPost/tp3/Public/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+
+[ 2017-05-08T11:19:36+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001036s ]
+
+[ 2017-05-08T11:19:37+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+
+[ 2017-05-08T11:19:59+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000757s ]
+
+[ 2017-05-08T11:20:00+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000864s ]
+
+[ 2017-05-08T11:30:42+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+
+[ 2017-05-08T11:30:42+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001007s ]
+
+[ 2017-05-08T11:31:10+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+
+[ 2017-05-08T11:31:10+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000827s ]
+
+[ 2017-05-08T11:31:20+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+
+[ 2017-05-08T11:31:21+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+
+[ 2017-05-08T11:50:53+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+
+[ 2017-05-08T14:05:14+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+
+[ 2017-05-08T14:05:14+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+
+[ 2017-05-08T14:15:11+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+
+[ 2017-05-08T14:15:11+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+
+[ 2017-05-08T14:37:38+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+
+[ 2017-05-08T15:19:44+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/head.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+
+[ 2017-05-08T15:19:55+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/head.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000657s ]
+
+[ 2017-05-08T15:19:55+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/head.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+
+[ 2017-05-08T15:21:28+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+
+[ 2017-05-08T15:21:29+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+
+[ 2017-05-08T15:22:17+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+
+[ 2017-05-08T15:22:18+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000899s ]
+
+[ 2017-05-08T15:22:20+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+
+[ 2017-05-08T15:22:53+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000789s ]
+
+[ 2017-05-08T15:22:53+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+
+[ 2017-05-08T15:27:37+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+
+[ 2017-05-08T15:27:37+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+
+[ 2017-05-08T15:36:43+08:00 ] ::1 /tp3/index.php/Forum/MainPost/__PUBLIC__/Forum/image/head.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+
+[ 2017-05-08T17:46:57+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+
+[ 2017-05-08T17:47:10+08:00 ] ::1 /tp3/index.php/Forum/ReplyPost/image/123.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+

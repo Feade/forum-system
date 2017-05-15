@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link href="../umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet"> 
+
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../umeditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../umeditor/umeditor.min.js"></script>
+    <script type="text/javascript" src="../umeditor/lang/zh-cn/zh-cn.js"></script>
+	
+
+	<script src="../umeditor/third-party/mathquill/mathquill.min.js"></script>
+	<link rel="stylesheet" href="../umeditor/third-party/mathquill/mathquill.css"/>
+
+	<title>详细</title>
+	<style type="text/css">
+		body{
+			width:80%;
+			margin: auto;
+			margin-top:50px;
+		}
+			
+		.item{
+			border: 1px solid #999;
+ 		border-radius: 10px;
+			padding: 10px;
+			position: relative;
+			margin-bottom: 20px;
+		}
+		.img-rounded{
+			width:50px;
+			height: 50px;
+			border-radius: 25px;
+			margin-left:25px;
+			margin-top: 25px;
+
+		}
+		
+		.huifu{
+			margin: 0 20px 0 30px;
+		}
+		.d1{
+			float: left;
+			height: 100%;
+			width: 100px;
+	
+		}
+		.auctor{
+			margin-left: 100px;
+			margin-top: 20px;
+			margin-right: 20px;
+
+		}
+		.fede-mete{
+			
+			margin-left: 100px;
+			margin-right: 10px;
+			float: right;
+			bottom:15px;
+			clear:right;
+
+		}
+		.fede-mete a{
+						color: #1acd76;
+           font-size: 14px;
+		}
+		.title{
+			border: 1px solid #999;
+		border-radius: 10px;
+			font-size: 20px;
+			padding-left: 30px;
+			padding-top: 20px;
+			height: 70px;
+			margin-bottom: 20px;
+
+		}
+		.img2{
+			width:30px;
+			height: 30px;
+			border-radius: 15px;
+		}
+		.xiaotubiao{
+			width:20px;
+			height:20px;
+			
+		}
+		
+	</style>
+</head>
+<body>
+
+
+	<div class="title">
+		<span title="哈哈哈哈"  >哈哈哈哈达瓦大万达开单机安慰奖我就安静
+		</span>
+	</div>
+<div class="item">
+	<div class="d1">	
+			<img src=".\image\123.png" class="img-rounded"></br>
+			<a  href="#" style="margin-left: 25px;">阳光少年</a>
+	</div>
+	<div    class="auctor">
+		<div class="xiangxi">
+			<p>
+
+				为什么别人发的照片总是比较美？Ta 到底怎么拍的？怎么做的后期？</br>
+
+				如果你有过类似的疑问，就打开本期周刊吧。</br>
+
+				摄影是一个系统的过程。一张图片好不好看既不完全取决于安排拍照键的那一刻，也不完全仰仗后期。把随时在身边的手机，变成最好用的相机，需要我们的脑力、眼力和工具协调配合.本期周刊没有任何专业术语，轻松平实的说明带给你重要的摄影观念与摄影知识，教你不同场景下的拍照技巧。掌握本书传授的手摄技巧，无论是拍美食拍人像还是拍旅游风景，统
+
+			</p>
+		<p>
+    <br/><span class="mathquill-embedded-latex" style="width: 26px; height: 41px;">\frac{a}{b}</span>
+</p>
+		</div>
+		<div class="fede-mete">
+			<span class="">
+						<a >两天前</a>
+						<a href="#"><span id="fu">回复</span></a>
+						<img src=".\image\zan.png" class="xiaotubiao" >
+						<a href="#"><span id="zan">点赞</span><span id="zan_count">5</span></a>
+
+						<img src=".\image\cai.png" class="xiaotubiao">
+						<a href="#"></span> <span id="cai">踩<span id="cai_count">3</span></a>
+					
+						<a href="#" id="de">删除</a>
+			</span>
+
+		</div></br>
+	</div>
+	
+	
+</div>
+
+    <form id="form" action="" method="post" target="_blank">
+
+        <script type="text/plain" id="myEditor" name="myEditor" style="width:100%;height:240px;">
+            <p>欢迎使用UEditor！</p>
+        </script>
+        <input type="submit" value="通过input的submit提交">
+
+    </form>
+     <button class="btn " id="add">添加</button>
+	
+	
+<script type="text/javascript">
+    //实例化编辑器
+    var um = UM.getEditor('myEditor');
+
+    //按钮的操作
+	function showHint(str)
+	{
+		var xmlhttp;
+		if (str.length==0)
+		  {
+			  $("form")="";
+			  return;
+		  }
+		if (window.XMLHttpRequest)
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari
+			  xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+			  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		{
+		 if(xmlhttp.readyState==4 && xmlhttp.status==200)
+		    {
+			    $("form").before(xmlhttp.responseText);
+		    }
+		}
+		xmlhttp.open("POST","../umeditor/php/getContent.php?myEditor="+str,false);
+		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xmlhttp.send("myEditor="+str);
+	};
+
+	$("#add").click(function(){
+	  	var text=[];
+	  	text.push(UM.getEditor('myEditor').getContent());
+
+	  	showHint(text);
+	});
+	
+	$("#zan").click(function(){
+		var zan=$("#zan_count").text();
+		$("#zan_count").text(++zan);
+	});
+
+	$("#cai").click(function(){
+		var cai=$("#cai_count").text();
+		$("#cai_count").text(++cai);
+	});
+
+	$("#fu").click(function(){
+		 $("form").toggle();
+	});
+
+	$("#de").click(function() {
+	    $(".item").remove(); // $(selector)通过选择器表示要删除的元素，remove()函数用以删除元素
+	});
+
+	$("form").hide();
+
+
+</script>
+</body>
+</html>
