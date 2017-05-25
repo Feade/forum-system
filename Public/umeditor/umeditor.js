@@ -5866,7 +5866,7 @@ UM.plugins['font'] = function () {
             { name: 'timesNewRoman', val: 'times new roman'},
             { name: 'sans-serif',val:'sans-serif'}
         ],
-        'fontsize': [10, 12,  16, 18,24, 32,48]
+        'fontsize': [10, 12,  16, 18, 24, 32, 48]
     });
 
     me.addOutputRule(function (root) {

@@ -7,6 +7,8 @@
     border: 1px solid #d4d4d4;
     box-shadow: 2px 2px 5px #d3d6da;
     background-color: #fff;
+    /*修改背景透明度*/
+    background-color: rgba(0,0,0,0.1);
 }
 .edui-container .edui-toolbar{
     position: relative;
@@ -22,6 +24,8 @@
 }
 .edui-container .edui-editor-body{
     background-color: #fff;
+    /*修改背景透明度*/
+    background-color: rgba(0,0,0,0.1);
 }
 .edui-editor-body .edui-body-container{
 }

@@ -12,15 +12,29 @@ class UserDetailController extends BaseController
     public function index()
     {
         $this->islogin();
-        $class=M('tfor_class');
-        $list=$class->field('for_class')->select();
-        $this->assign('list',$list);
+        // $class=M('tfor_class');
+        // $list=$class->field('for_class')->select();
+        // $this->assign('list',$list);
         $who['for_id']=$_SESSION['name'];
         $UserDetail=D('UserDetail')->where($who)->find();
         $this->assign('UserDetail',$UserDetail);
         $this->display();
     }
-
+    /**
+     * 介绍经验等级升级细则
+     * @return null
+     */
+    public function introduce()
+    {
+        $this->islogin();
+        // $class=M('tfor_class');
+        // $list=$class->field('for_class')->select();
+        // $this->assign('list',$list);
+        $who['for_id']=$_SESSION['name'];
+        $UserDetail=D('UserDetail')->where($who)->find();
+        $this->assign('UserDetail',$UserDetail);
+        $this->display();
+    }
     /**
      * 查看用户个人详细信息
      * @return [type] [description]
@@ -28,6 +42,9 @@ class UserDetailController extends BaseController
     public function show()
     {
         $this->islogin();
+        $user['for_id']=$_SESSION['name'];
+        $head=M('tfor_detail')->where($user)->field('for_head')->find();
+        $this->assign('userHead',$head);
         $who['for_id']=$_GET['ID'];
         $UserDetail=D('UserDetail')->where($who)->find();
         $this->assign('UserDetail',$UserDetail);
@@ -43,23 +60,31 @@ class UserDetailController extends BaseController
         $this->islogin();
         if(IS_POST)
 	    {
-            $config=array(
-                'maxSize' => 1024*300,
-                'exts' => array('jpg','gif','png','jpeg','ico'),
-                'rootPath' => './Public/Forum/image',
-                'savePath' => './',
-                'subName' => $_SESSION['name'],
-                'saveExt' => 'png',
-            );
-            $photo=new \Think\Upload($config);
-            $info=$photo->uploadOne($_FILES['for_head']);
-            if(!$info)
-            {
-                $this->alterDate(D('UserDetail'));
+            if($_FILES['for_head']['name'])
+            {            
+                $config=array(
+                    'maxSize' => 1024*1000,
+                    'exts' => array('jpg','gif','png','jpeg','ico'),
+                    'rootPath' => './Public/Forum/image',
+                    'savePath' => './',
+                    'subName' => $_SESSION['name'],
+                    'saveExt' => 'png',
+                );
+                $photo=new \Think\Upload($config);
+                $info=$photo->uploadOne($_FILES['for_head']);
+                if(!$info)
+                {
+                    $this->error('图片格式不正确!');
+                    // $this->alterDate(D('UserDetail'));
+                }
+                else
+                {
+                    $_POST['for_head']=$_SESSION['name'].'/'.$info['savename'];
+                    $this->alterDate(D('UserDetail'));
+                }
             }
             else
             {
-                $_POST['for_head']=$_SESSION['name'].'/'.$info['savename'];
                 $this->alterDate(D('UserDetail'));
             }
 	    }
@@ -74,22 +99,37 @@ class UserDetailController extends BaseController
     }
     /**
      * 修改主帖状态值
-     * @param  [int] $flag [1：展示；0：用户回收站；2-9：用户彻底删除]
+     * @param  [int] $flag [1：展示；0：用户回收站；2用户彻底删除；3管理员删除]
      * @return null
      */
     protected function alterStatus($flag)
     {
         $this->islogin();
-        $class=M('tfor_class');
-        $list=$class->field('for_class')->select();
-        $this->assign('list',$list);
-        $MainPost=M('tfor_main')->join('LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id')->where('for_flag=%d and tfor_main.for_id=%d',$flag,$_SESSION['name'])->select();
-        for ($i=0; $i < count($MainPost,0); $i++)
+        $count=D('MainPost')->where('for_flag=%d and tfor_main.for_id=%d',$flag,$_SESSION['name'])->count();
+
+        if($count)
         {
-            $MainPost[$i]['for_text']=htmlspecialchars_decode($MainPost[$i]['for_text']);
+            $Page=getpage($count,10);
+
+            $class=M('tfor_class');
+            $list=$class->field('for_class')->select();
+            $this->assign('list',$list);
+            $MainPost=M('tfor_main')->join('LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id')->where('for_flag=%d and tfor_main.for_id=%d',$flag,$_SESSION['name'])->order('for_num desc,for_time')->limit($Page->firstRow.','.$Page->listRows)->select();
+            // for ($i=0; $i < count($MainPost,0); $i++)
+            // {
+            //     $MainPost[$i]['for_text']=htmlspecialchars_decode($MainPost[$i]['for_text']);
+            // }
+            $this->assign('page',$Page->show());
+            $this->assign('list_post',$MainPost);
+            $user['for_id']=$_SESSION['name'];
+            $head=M('tfor_detail')->where($user)->field('for_head')->find();
+            $this->assign('userHead',$head);
+            $this->display();
         }
-        $this->assign('list_post',$MainPost);
-        $this->display();
+        else
+        {
+            $this->error('未查询到相关数据！',U("Forum/UserDetail/index"));
+        }
     }
     /**
      * 用户已发主帖
@@ -108,6 +148,14 @@ class UserDetailController extends BaseController
     {
         $this->alterStatus(0);
     }
+     /**
+     * 管理员删除主贴，查看
+     * @return [type] [description]
+     */
+    public function deleteByAdmin()
+    {
+        $this->alterStatus(3);
+    }
     /**
      * 用户更改主帖
      * @return null
@@ -115,6 +163,9 @@ class UserDetailController extends BaseController
     public function alterPost()
     {
         $this->islogin();
+        $user['for_id']=$_SESSION['name'];
+        $head=M('tfor_detail')->where($user)->field('for_head')->find();
+        $this->assign('userHead',$head);
         if(IS_POST)
         {
             $this->alterDate(D('MainPost'));
@@ -142,6 +193,28 @@ class UserDetailController extends BaseController
         if($_GET['delete_true']==0)
         {
             $this->deleteDate(D('MainPost'));
+        }
+    }
+    /**
+     * 用户彻底删除主贴
+     * @return [type] [description]
+     */
+    public function deleteCompletely()
+    {
+        $this->islogin();
+        if($_GET['delete_true']==2)
+        {
+            $condition['for_num']=$_GET['delete_main_num'];
+            $flag['for_flag']=2;
+            $stuts=D('MainPost')->where($condition)->field('for_flag')->save($flag);
+            if($stuts)
+            {
+                $this->success('成功删除！');
+            }
+            else
+            {
+                $this->error('删除失败！');
+            }
         }
     }
     /**

@@ -12,6 +12,9 @@ class UserIDController extends BaseController
     public function modify()
     {
     	$this->islogin();
+		$user['for_id']=$_SESSION['name'];
+		$head=M('tfor_detail')->where($user)->field('for_head')->find();
+		$this->assign('userHead',$head);
     	if($_POST)
     	{
     		if($_POST['for_password']==$_POST['new_password'])

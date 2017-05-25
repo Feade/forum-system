@@ -1,0 +1,125 @@
+[ 2017-05-26T07:53:38+08:00 ] ::1 /forum-system/index.php/Forum/MainPost/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021004s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.027415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.027668s ]
+SQL: SHOW COLUMNS FROM `tfor_class` [ RunTime:0.0408s ]
+SQL: SELECT `for_class` FROM `tfor_class`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tfor_main` [ RunTime:0.0259s ]
+SQL: SELECT * FROM `tfor_main` LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id  WHERE ( for_flag=1 ) ORDER BY `for_num` desc,`for_time`  [ RunTime:0.0224s ]
+NOTIC: [8] Undefined index: name C:\wamp\www\forum-system\Application\Forum\Controller\MainPostController.class.php 第 115 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001302s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.234227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.234543s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.019868s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.020102s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.016736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.016988s ]
+
+[ 2017-05-26T07:54:00+08:00 ] ::1 /forum-system/index.php/Forum/MainPost/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `tfor_class` [ RunTime:0.0306s ]
+SQL: SELECT `for_class` FROM `tfor_class`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tfor_main` [ RunTime:0.0242s ]
+SQL: SELECT * FROM `tfor_main` LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id  WHERE ( for_flag=1 ) ORDER BY `for_num` desc,`for_time`  [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: name C:\wamp\www\forum-system\Application\Forum\Controller\MainPostController.class.php 第 115 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000354s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000643s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.102706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.102970s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000780s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001976s ]
+
+[ 2017-05-26T07:54:09+08:00 ] ::1 /forum-system/index.php/Forum/MainPost/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `tfor_class` [ RunTime:0.0207s ]
+SQL: SELECT `for_class` FROM `tfor_class`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `tfor_main` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `tfor_main` LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id  WHERE ( for_flag=1 ) ORDER BY `for_num` desc,`for_time`  [ RunTime:0.0021s ]
+NOTIC: [8] Undefined index: name C:\wamp\www\forum-system\Application\Forum\Controller\MainPostController.class.php 第 115 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000350s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000657s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001546s ]
+
+[ 2017-05-26T07:56:10+08:00 ] ::1 /forum-system/index.php/Forum/MainPost/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016464s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018165s ]
+SQL: SHOW COLUMNS FROM `tfor_class` [ RunTime:0.0164s ]
+SQL: SELECT `for_class` FROM `tfor_class`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `tfor_main` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `tfor_main` LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id  WHERE ( for_flag=1 ) ORDER BY `for_num` desc,`for_time`  [ RunTime:0.0019s ]
+NOTIC: [8] Undefined index: name C:\wamp\www\forum-system\Application\Forum\Controller\MainPostController.class.php 第 115 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000342s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000572s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.180836s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.181032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015553s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.013992s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014217s ]
+
+[ 2017-05-26T07:57:02+08:00 ] ::1 /forum-system/index.php/Forum/MainPost/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+SQL: SHOW COLUMNS FROM `tfor_class` [ RunTime:0.0166s ]
+SQL: SELECT `for_class` FROM `tfor_class`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `tfor_main` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `tfor_main` LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id  WHERE ( for_flag=1 ) ORDER BY `for_num` desc,`for_time`  [ RunTime:0.0025s ]
+NOTIC: [8] Undefined index: name C:\wamp\www\forum-system\Application\Forum\Controller\MainPostController.class.php 第 115 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000389s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015884s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016120s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000971s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001759s ]
+

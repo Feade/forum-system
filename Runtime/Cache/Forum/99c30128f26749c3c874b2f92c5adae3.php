@@ -1,130 +1,218 @@
-<?php if (!defined('THINK_PATH')) exit();?><html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no"/>
   <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="/tp3/Public/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="/forum-system/Public/Forum/css/xq_navbar.css"/>
+  <link rel="shortcut icon" href="/forum-system/Public/Forum/image/login.ico">
+  <link rel="stylesheet" href="/forum-system/Public/Forum/css/xq.css"/>
 
-  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/tp3/Public/umeditor/third-party/jquery.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/tp3/Public/umeditor/umeditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/tp3/Public/umeditor/umeditor.min.js"></script>
-    <script type="text/javascript" src="/tp3/Public/umeditor/lang/zh-cn/zh-cn.js"></script>
-  <script src="/tp3/Public/umeditor/third-party/mathquill/mathquill.min.js"></script>
-  <link rel="stylesheet" href="/tp3/Public/umeditor/third-party/mathquill/mathquill.css"/>
+  <link href="/forum-system/Public/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="/forum-system/Public/umeditor/third-party/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/forum-system/Public/umeditor/umeditor.config.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/forum-system/Public/umeditor/umeditor.min.js"></script>
+  <script type="text/javascript" src="/forum-system/Public/umeditor/lang/zh-cn/zh-cn.js"></script>
+  <script src="/forum-system/Public/umeditor/third-party/mathquill/mathquill.min.js"></script>
+  <link rel="stylesheet" href="/forum-system/Public/umeditor/third-party/mathquill/mathquill.css"/>
 
-  <title>添加主题帖</title>
+  <script>
+    $(document).ready(function(){
+      $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+      });
+      $("#panel").hide();
+    });
+  </script>
+
   <style type="text/css">
     body{
-      width:80%;
-      margin: auto;
-      margin-top:50px;
+      background-color: #CCCCCC;
     }
-
     .item{
-      border: 1px solid #999;
-    border-radius: 10px;
+      width:70%;
+    }
+    .nav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      width: 100%;
+    }
+    .item{
+      margin:20px auto 20px auto;
+      box-shadow: 0 0 5px #e4e6e8;
       padding: 10px;
       position: relative;
+      width: 600px;
+      height: 120px;
       margin-bottom: 20px;
-    }
-    .img-rounded{
-      width:50px;
-      height: 50px;
-      border-radius: 25px;
-      margin-left:25px;
-      margin-top: 25px;
 
     }
-
-    .huifu{
-      margin: 0 20px 0 30px;
+    #first-item{
+      margin-top: 55px;
     }
+
     .d1{
       float: left;
-      height: 100%;
-      width: 100px;
-
-    }
-    .auctor{
-      margin-left: 100px;
-      margin-top: 20px;
-      margin-right: 20px;
-
-    }
-    .fede-mete{
-
-      margin-left: 100px;
-      margin-right: 10px;
-      float: right;
-      bottom:15px;
-      clear:right;
-
-    }
-    .fede-mete a{
-            color: #1acd76;
-           font-size: 14px;
+      width: 50px;
+      height: 100px;
     }
     .title{
-      border: 1px solid #999;
-    border-radius: 10px;
+
       font-size: 20px;
+      margin-left: 50px;
       padding-left: 30px;
       padding-top: 20px;
       height: 70px;
-      margin-bottom: 20px;
 
     }
-    .img2{
-      width:30px;
-      height: 30px;
-      border-radius: 15px;
+    .item:hover{
+      box-shadow: 0 0 5px #c2c2c2;
     }
-    .xiaotubiao{
-      width:20px;
-      height:20px;
+    .feed-meta{
 
+      margin-left: 50px;
+      height: 20px;
+      bottom:15px;
+    }
+    .img-rounded{
+      margin-top: 25px;
+      width:50px;
+      height: 50px;
+      border-radius: 25px;
+
+    }
+    #r_{
+      float:right;
+    }
+    .navigation{
+      width: 80px;
+      float: right;
+    }
+    .img-navigation{
+      max-width: 100%;
+      width:50px;
+      height: 50px;
+      float: right;
+      border-radius: 25px;
+    }
+    .button-navigation{
+      width: 51px;
+      height: 52px;
+      border-radius: 25px;
+      background-color: #330066;
+      margin-top: 5px;
+      margin-right:  5px;
+      float: right;
+    }
+    input[type="text"]{
+      width: 500px;
+      border-radius:4px;
+    }
+    .control-div{
+      color: #000000;
+      margin-top: 20px;
+      margin-left: 15%;
+      max-width: 70%;
+    }
+    .controls{
+      margin-left: 40px;
+    }
+    .select-class{
+      margin-left: 100px;
+    }
+    .btn{
+      background-color: #999999;
+      border-radius:4px;
+      margin-top:20px;
+      margin-left: 80%;
+    }
+    .editor{
+      margin-top: 20px;
+      margin-left: 50px;
+      float: center;
     }
   </style>
+  <title>新增主贴</title>
 </head>
 <body>
-  <p id="userdetail"><a href="<?php echo U('Forum/MainPost/index');?>">返回论坛主页</a></p>
-  <p id="userdetail"><a href="<?php echo U('Forum/UserDetail/index');?>">个人中心</a></p>
-  <p id="logout"><a href="<?php echo U('Forum/Login/logout');?>">注销</a></p>
-  <form action="<?php echo U('Forum/MainPost/addMain');?>" method="post" class="form-horizontal">
-
-    <div class="control-group">
-      <label class="control-label" >标题</label>
-      <div class="controls">
-        <input type="text"   name="for_title" value="<?php echo ($result["for_title"]); ?>"><span>&nbsp* </span>
-      </div>
+<br><br><br>
+  <div id="flip" class="navigation">
+    <div class="button-navigation">
+      <a href="<?php echo U('Forum/UserDetail/index');?>">
+        <img class="img-navigation" src="/forum-system/Public/Forum/image/<?php echo ($userHead["for_head"]); ?>">
+      </a>
     </div>
-
-
-    <div class="control-group">
-      <label class="control-label" >类别</label>
-      <div class="controls">
-        <select  name="for_class" value="<?php echo ($result["for_class"]); ?>"><span>&nbsp* </span>
-          <?php if(is_array($list)): foreach($list as $key=>$class): ?><option><?php echo ($class["for_class"]); ?></option><?php endforeach; endif; ?>
-        </select>
-      </div>
+    <div class="button-navigation">
+      <img class="img-navigation" src="/forum-system/Public/Forum/image/menu.jpg">
     </div>
-
-    <div class="control-group">
-      <label class="control-label" >内容</label>
-      <div class="controls">
-        <script type="text/plain" id="myEditor" name="for_text" style="width:100%;height:240px;" >
-          <p>请使用英文状态输入公式！</p>
-        </script>
-      </div>
+    <div id="panel" class="navigation">
+        <div class="button-navigation">
+            <a href="<?php echo U('Forum/MainPost/addMain');?>" title="新增主贴">
+              <img class="img-navigation" src="/forum-system/Public/Forum/image/new.jpg">
+            </a>
+        </div>
+        <div class="button-navigation">
+            <a href="<?php echo U('Forum/MainPost/index');?>" title="返回论坛主页">
+              <img class="img-navigation" src="/forum-system/Public/Forum/image/homepage.jpg">
+            </a>
+        </div>
+        <div class="button-navigation">
+            <a href="<?php echo U('Forum/Login/logout');?>" title="注销">
+              <img class="img-navigation" src="/forum-system/Public/Forum/image/exit.jpg">
+            </a>
+        </div>
     </div>
+  </div>
 
-    <div class="control-group">
-      <div class="controls">
-        <button type="submit" class="btn">添加</button>
+  <div class="xq_bag nav" id="bar3">
+    <ul class="xq_navbar">
+      <?php if(is_array($list)): foreach($list as $key=>$it): ?><li class="xq_navli"><a href="<?php echo U('Forum/MainPost/order');?>?for_class=<?php echo ($it["for_class"]); ?>"><?php echo ($it["for_class"]); ?></a></li><?php endforeach; endif; ?>
+    </ul>
+  </div>
+
+    <form action="<?php echo U('Forum/MainPost/addMain');?>" method="post" class="form-horizontal">
+      <div class="control-div">标题
+        <span class="controls">
+          <input type="text"   name="for_title" value="<?php echo ($result["for_title"]); ?>"><span>&nbsp;<font color="red">*</font></span>
+          <span class="select-class">类别
+           <span class="controls">
+              <select  name="for_class" value="<?php echo ($result["for_class"]); ?>">
+                <?php if(is_array($list)): foreach($list as $key=>$class): ?><option><?php echo ($class["for_class"]); ?></option><?php endforeach; endif; ?>
+              </select>
+            </span>
+            <span>&nbsp;<font color="red">*</font></span>
+          </span>
+        </span>
       </div>
-    </div>
-  </form>
+      <div class="control-div">内容
+        <span class="controls">
+          <div class="editor">
+            <div><font color="blue" size="3">请开始你的表演! </font><font color="olive">(提示：数学公式不支持中文输入)</font></div>
+            <script type="text/plain" id="myEditor" name="for_text" style="width:100%;height:50%;"></script>
+          </div>
+        </span>
+      </div>
+      <div class="controls">
+        <button type="submit" class="btn btn-default btn-lg">确认发表</button>
+      </div>
+    </form>
 
+  <script src="/forum-system/Public/Forum/js/xq_navbar.js"></script>
+  <script>
+    $(function(){
+      $("#bar1").xq_navbar({"type":"underline","liwidth":"auto","bgcolor":"#000","hcolor":"#f0f"});
+      $("#bar2").xq_navbar({"type":"beat","liwidth":"avg","bgcolor":"#000","hcolor":"#f0f"});
+      $("#bar3").xq_navbar({"type":"line","liwidth":"avg","bgcolor":"#000"});
+      $("#bar4").xq_navbar({"type":"overline","liwidth":"120","bgcolor":"#000"});
+      $("#bar5").xq_navbar({"type":"block","liwidth":"avg","bgcolor":"#000","hcolor":["blue","rgb(10;,100,100)","red","pink","green","rgba(23,234,22,1)","rgb(230,230,230)"]});
+    });
+    function zan_click(what){
+      var zan=$(what).text();
+      $(what).text(++zan);
+    };
+  </script>
   <script type="text/javascript">
       //实例化编辑器
       var um = UM.getEditor('myEditor');
@@ -149,7 +237,7 @@
       //      $("form").before(xmlhttp.responseText);
       //     }
       // }
-      // xmlhttp.open("POST","/tp3/Public/umeditor/php/getContent.php?myEditor="+str,false);
+      // xmlhttp.open("POST","/forum-system/Public/umeditor/php/getContent.php?myEditor="+str,false);
       // xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       // xmlhttp.send("myEditor="+str);
     };
@@ -184,4 +272,5 @@
 
   </script>
 </body>
+
 </html>

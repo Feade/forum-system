@@ -20,7 +20,8 @@ class ReplyPostModel extends Model
 	{
 		$condition['for_num']=$_GET['delete_reply_num'];
 		$flag['for_flag']=0;
-		return $this->where($condition)->field('for_flag')->save($flag)?0:1;
+		$flag['for_text']="<font color='red'>用户已删除该回复信息</font>";
+		return $this->where($condition)->field('for_text,for_flag')->save($flag)?0:1;
 	}
 	/**
 	 * 用户修改回贴

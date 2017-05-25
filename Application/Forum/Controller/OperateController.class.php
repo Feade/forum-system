@@ -31,6 +31,8 @@ class OperateController extends BaseController
 				M('tfor_operate1')->save($up);
 				$main['for_num']=$up['for_num'];
 				$addUp=M('tfor_main')->where($main)->field('for_up')->find();
+				$who=M('tfor_main')->where($main)->field('for_id')->find();
+                $this->updateUserValue($who['for_id'],2,0);
 				$addUp['for_up']+=1;
 				M('tfor_main')->where($main)->setField($addUp);
 				$this->success('点赞 成功！');
@@ -42,6 +44,8 @@ class OperateController extends BaseController
 			M('tfor_operate1')->add($up);
 			$main['for_num']=$up['for_num'];
 			$addUp=M('tfor_main')->where($main)->field('for_up')->find();
+			$who=M('tfor_main')->where($main)->field('for_id')->find();
+            $this->updateUserValue($who['for_id'],2,0);
 			$addUp['for_up']+=1;
 			M('tfor_main')->where($main)->setField($addUp);
 			$this->success('点赞 成功！');
@@ -156,6 +160,8 @@ class OperateController extends BaseController
 				M('tfor_operate2')->save($up);
 				$reply['for_num']=$up['for_num'];
 				$addUp=M('tfor_reply')->where($reply)->field('for_up')->find();
+				$who=M('tfor_reply')->where($reply)->field('for_id')->find();
+                $this->updateUserValue($who['for_id'],2,0);
 				$addUp['for_up']+=1;
 				M('tfor_reply')->where($reply)->setField($addUp);
 				$this->success('点赞 成功！');
@@ -167,6 +173,8 @@ class OperateController extends BaseController
 			M('tfor_operate2')->add($up);
 			$reply['for_num']=$up['for_num'];
 			$addUp=M('tfor_reply')->where($reply)->field('for_up')->find();
+			$who=M('tfor_reply')->where($reply)->field('for_id')->find();
+            $this->updateUserValue($who['for_id'],2,0);
 			$addUp['for_up']+=1;
 			M('tfor_reply')->where($reply)->setField($addUp);
 			$this->success('点赞 成功！');

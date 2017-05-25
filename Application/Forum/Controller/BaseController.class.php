@@ -16,7 +16,18 @@ class BaseController extends Controller
     		$this->redirect("Login/login");
     	}
     }
+        /**
+     * 检测管理员是否登录
+     * @return no
+     */
+    protected function isLoginadm()
+    {
+        $s = session('loginAdm');
 
+        if($s!='is_login'){
+            $this->redirect("Adm/login");
+        }
+    }
     /**
      * 插入一条记录
      * @param table $model 数据表的实例化模型类指针
@@ -29,7 +40,7 @@ class BaseController extends Controller
             {
                 $result = $model->add();
                 if($result) {
-                    $this->success('数据添加成功！');
+                    $this->success('操作成功！');
                 }else{
                     $this->error('数据添加错误！');
                 }
@@ -96,4 +107,54 @@ class BaseController extends Controller
         $this->display(); // 输出模板
     }
 
+    /**
+     * 更新论坛用户经验值
+     * @param [type] $ID    [用户ID]
+     * @param [type] $value [新的用户经验值]
+     */
+    protected function updateUserValue($ID,$value,$status=1)
+    {
+        $who['for_id']=$ID;
+        if($status==1)
+        {
+            $newValue['for_value']=$value;
+        }
+        else
+        {
+            $findValue=M("tfor_detail")->where($who)->field('for_value')->find();
+            $newValue['for_value']=$value+intval($findValue['for_value']);            
+        }
+        $newValue['for_level']=$this->newLevel($value);
+        $ret=M('tfor_detail')->where($who)->save($newValue);
+    }
+
+    /**
+     * 更新用户经验等级
+     * @param  [type] $value [用户经验值]
+     * @return [type]        [等级]
+     */
+    protected function newLevel($value)
+    {
+        $count=-1;
+        ++$value;
+        if($value<100)
+        {
+            for ($i=1; $value>0; $i+=$count)
+            { 
+                $value-=$i*15;
+                ++$count;
+            }
+            return $count;
+        }
+        else
+        {       
+            $count=2; 
+            for ($i=1; $value>0; $i+=($count-3))
+            { 
+                $value-=$i*100;
+                ++$count;
+            }
+            return $count;
+        }
+    }
 }

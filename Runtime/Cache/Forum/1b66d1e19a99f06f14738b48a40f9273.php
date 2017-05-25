@@ -1,0 +1,186 @@
+<?php if (!defined('THINK_PATH')) exit();?><html>
+<head>
+  <title>修改论坛用户详情</title>
+
+  <!-- <link href="/forum-system/Public/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="/forum-system/Public/css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <style type="text/css">
+    body{
+      background-image: url(/forum-system/Public/Forum/image/timg.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:20PX;
+      width:80%;
+    }
+    span{
+      color:red;
+    }
+
+    .control-div{
+      /*position: relative;*/
+      margin-top: 20px;
+      height: 35px;
+      font-weight: 30px
+    }
+    input,select{
+      margin-top: 20px;
+      height: 35px;
+      width: 220px;
+      border-radius: 5px;
+    }
+    .control-name{
+    	position: absolute;
+      margin-top: 5px;
+      margin-left: 28%;
+    }
+    form{
+    	position: absolute;
+      margin-left: 33%;
+    }
+
+  </style>
+</head>
+<body>
+<div class="control-name">
+			  	<div class="control-div">用户ID</div>
+		  		<div class="control-div">用户密码</div>
+		  		<div class="control-div">用户昵称</div>
+		  		<div class="control-div">性别</div>
+		  		<div class="control-div">QQ</div>
+		  		<div class="control-div">微信</div>
+		  		<div class="control-div">电话</div>
+		  		<div class="control-div">邮箱</div>
+		  		<div class="control-div">家乡</div>
+		  		<div class="control-div">星座</div>
+		  		<div class="control-div">等级</div>
+		  		<div class="control-div">经验值</div>
+		  		<div class="control-div">个性签名</div>
+</div>
+<form action="<?php echo U('forum/Adm/alterForumUser');?>" method="post" class="form-search" name="myForm" onsubmit="return validateForm();">
+	<input class="input-alter" type="text" name="old_id" value="<?php echo ($for["for_id"]); ?>" style="display: none;">
+
+	<div class="control-group"><input class="input-alter" type="text" name="for_id" value="<?php echo ($for["for_id"]); ?>"></div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_password" value="<?php echo ($for["for_password"]); ?>"></div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_name" value="<?php echo ($for["for_name"]); ?>"></div>
+	<div class="control-group">
+		<select name="for_sex" value="<?php echo ($for["for_sex"]); ?>">
+			<option></option>
+			<option>男</option>
+			<option>女</option>
+		</select>
+	</div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_qq" value="<?php echo ($for["for_qq"]); ?>"></div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_wechat" value="<?php echo ($for["for_wechat"]); ?>"></div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_tel" value="<?php echo ($for["for_tel"]); ?>"></div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_email" value="<?php echo ($for["for_email"]); ?>"></div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_hometown" value="<?php echo ($for["for_hometown"]); ?>"></div>
+	<div class="control-group">
+		<select name="for_constellation" value="<?php echo ($for["for_constellation"]); ?>" class="select-g">
+			<option><?php echo ($for["for_constellation"]); ?></option>
+			<option>白羊座</option>
+			<option>金牛座</option>
+			<option>双子座</option>
+			<option>巨蟹座</option>
+			<option>狮子座</option>
+			<option>处女座</option>
+			<option>天秤座</option>
+			<option>天蝎座</option>
+			<option>射手座</option>
+			<option>摩羯座</option>
+			<option>水瓶座</option>
+			<option>双鱼座</option>
+		</select>
+	</div>
+	<div class="control-group"><input class="input-alter" type="text" readonly="ture"  name="for_level" placeholder="<?php echo ($for["for_level"]); ?>     不可直接修改等级"></div>
+	<div class="control-group"><input class="input-alter" type="text" name="for_value" value="<?php echo ($for["for_value"]); ?>"></div>
+	<div class="control-group">
+		<textarea name="for_signature" rows="3" cols="28" maxlength="30" style="border-radius: 5px;margin-top: 20px;"><?php echo ($for["for_signature"]); ?></textarea>
+	<div>
+	<button type="submit" class="btn" style="border-radius: 5px;margin-top: 20px;">确认修改</button></div>
+</form>
+
+  <script type="text/javascript">
+    function validateForm()
+    {
+    	var x0=document.forms["myForm"]["for_id"].value;
+      if (x0==null || x0=="")
+      {
+        alert("用户ID必须填写！");
+        return false;
+      }
+      if(isNaN(x0)||x0.length>10)
+      {
+      	alert("用户ID必须是10位以下数字的组合！");
+      	return false;
+      }
+      var x1=document.forms["myForm"]["for_name"].value;
+      if (x1==null || x1=="")
+      {
+        alert("昵称必须填写！");
+        return false;
+      }
+      else if(x1.length>20)
+      {
+        alert("昵称超过20个字符！");
+        return false;
+      }
+      var x2=document.forms["myForm"]["for_wechat"].value;
+      if (x2.length > 30)
+      {
+        alert("微信号超过30个字符！");
+        return false;
+      }
+      var x3=document.forms["myForm"]["for_qq"].value;
+      var x3len=x3.length;
+      if ( !isNaN(x3) && x3len > 4 && x3len < 15){}
+      else if(x3len==0){}
+      else
+      {
+        alert("请输入5-15位有效QQ号！");
+        return false;
+      }
+      var x4=document.forms["myForm"]["for_tel"].value;
+      if(x4.length!=0)
+      {
+        if(x4.length!=11)
+        {
+          alert("请输入11位有效电话号码！");
+          return false;
+        }
+      }
+      var x=document.forms["myForm"]["for_email"].value;
+      if(x.length!=0)
+      {
+        var atpos=x.indexOf("@");
+        var dotpos=x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+          alert("不是一个有效的 e-mail 地址");
+            return false;
+        }
+      }
+      var x5=document.forms["myForm"]["for_signature"].value;
+      if(x5.length!=0 && x5.length>30)
+      {
+        alert("个性签名超过30个字符！");
+        return false;
+      }
+      var x6=document.forms["myForm"]["for_password"].value;
+      if(x6.length!=0 && x6.length<6)
+      {
+        alert("密码最少为6位数！");
+        return false;
+      }
+      var x8=document.forms["myForm"]["for_value"].value;
+      if(x8.length!=0 && isNaN(x8) )
+      {
+        alert("经验值和等级必须是数字！");
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

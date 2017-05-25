@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="shortcut icon" href="__PUBLIC__/Forum/image/login.ico">
-
-	<link rel="stylesheet" href="__PUBLIC__/Forum/css/xq_navbar.css"/>
-	<link rel="stylesheet" href="__PUBLIC__/Forum/css/xq.css"/>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Forum/css/userdetail.css">
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){
-
-		// $(".title").click(function(){
-		// 	window.location.href="pinglun.html";
-		// });
-
-	});
-
+	<script>
+		$(document).ready(function(){
+		  $("#flip").click(function(){
+		    $("#panel").slideToggle("slow");
+		  });
+		  $("#panel").hide();
+		});
 	</script>
-	<title>论坛主页</title>
 	<style type="text/css">
-		body .item{
-			width:70%;
-
+		body{
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:50PX;
+			width:100%;
 		}
-		.nav{
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 20;
-			width: 100%;
+		body{
+		    background-color: #CCCCCC;
+	    }
+		body .item{
+			width:80%;
 		}
 		.item{
 			margin:20px auto 20px auto;
@@ -49,7 +43,6 @@
 
 		.d1{
 			float: left;
-
 			width: 50px;
 			height: 100px;
 		}
@@ -62,7 +55,6 @@
 			height: 70px;
 
 		}
-
 		.item:hover{
 			box-shadow: 0 0 5px #c2c2c2;
 		}
@@ -82,92 +74,240 @@
 		#r_{
 			float:right;
 		}
+
+		.nav{
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 20;
+			width: 100%;
+		}
+		.img-rounded{
+			width:50px;
+			height: 50px;
+			border-radius: 25px;
+		}
+		#guidebar{
+
+			float: left;
+		}
+
+		.ue-sidenav{
+
+			margin-left: 300px;
+
+		}
+		.category, a:hover{
+			color: #66FFFF;
+		}
+		#guidebar a{
+
+			color: #4169E1;
+
+		}
+		.ue-sidebar{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-size: 17px;
+		}
+		.table{
+			margin-left: 200px;
+			width: 800px;
+		}
+		.table-font-color1{
+			color: #66FFCC;
+		}
+		.table-font-color2{
+			color: #66CCFF;
+		}
+		.category a{
+			text-decoration:none;
+		}
+		ul,li{
+		  	list-style: none;
+		}
+		#modify{
+			float: auto;
+			margin-left: 900px;
+		}
+
+		.navigation{
+			width: 80px;
+			float: right;
+		}
+		.img-navigation{
+			width:50px;
+			height: 50px;
+			float: right;
+			border-radius: 25px;
+		}
+		.button-navigation{
+			width: 51px;
+			height: 52px;
+			border-radius: 25px;
+		    background-color: #330066;
+		    margin-top: 5px;
+		    margin-right:  5px;
+		    float: right;
+		}
+
 	</style>
+	<title>个人中心</title>
+
 </head>
 <body>
-	<br><br><br>
-	<p id="userdetail"><a href="{:U('Forum/MainPost/index')}">返回论坛主页</a></p>
-	<p id="userdetail"><a href="{:U('Forum/UserDetail/index')}">个人中心</a></p>
-	<p id="logout"><a href="{:U('Forum/Login/logout')}">注销</a></p>
-		
-	<div class="xq_bag nav" id="bar3">
-		<ul class="xq_navbar">
-			<foreach name="list" item="it">
-				<li class="xq_navli"><a href="{:U('Forum/MainPost/order')}?for_class={$it.for_class}">{$it.for_class}</a></li>
-			</foreach>
-		</ul>
+
+	<div id="flip" class="navigation">
+		<div class="button-navigation">
+			<a href="{:U('Forum/UserDetail/index')}">
+				<img class="img-navigation" src="__PUBLIC__/Forum/image/{$userHead.for_head}">
+			</a>
+		</div>
+		<div class="button-navigation">
+			<img class="img-navigation" src="__PUBLIC__/Forum/image/menu.jpg">
+		</div>
+		<div id="panel" class="navigation">
+				<div class="button-navigation">
+						<a href="{:U('Forum/MainPost/addMain')}" title="新增主贴">
+							<img class="img-navigation" src="__PUBLIC__/Forum/image/new.jpg">
+						</a>
+				</div>
+				<div class="button-navigation">
+						<a href="{:U('Forum/MainPost/index')}" title="返回论坛主页">
+							<img class="img-navigation" src="__PUBLIC__/Forum/image/homepage.jpg">
+						</a>
+				</div>
+				<div class="button-navigation">
+						<a href="{:U('Forum/Login/logout')}" title="注销">
+							<img class="img-navigation" src="__PUBLIC__/Forum/image/exit.jpg">
+						</a>
+				</div>
+		</div>
 	</div>
 
-	<foreach name="list_post" item="it">
-		<div class="item" id="first-item">
-			<div class="d1"><img src="__PUBLIC__/Forum/image/{$it.for_head}" class="img-rounded"></div>
+<div class="wrap">
+	<div   class="ue-sidenav">
+		<foreach name="list_post" item="it">
+			<div class="item" id="first-item">
+				<div class="d1"><img src="__PUBLIC__/Forum/image/{$it.for_head}" class="img-rounded"></div>
 
-			<div class="title">
-				<span id="one" class="">
-					<a href="{:U('Forum/ReplyPost/index')}?for_num={$it.for_num}" title="查看详情">{$it.for_title}</a>
-				</span>
-			</div>
+				<div class="title">
+					<span id="one" class="">
+						<a href="{:U('Forum/ReplyPost/index')}?for_num={$it.for_num}" title="查看详情">{$it.for_title}</a>
+					</span>
+				</div>
 
-			<div class="feed-meta">
-				<div class="zm-item-meta answer-actions clearfix js-contentActions">
-					<div class="zm-meta-panel">
+				<div class="feed-meta">
+					<div class="zm-item-meta answer-actions clearfix js-contentActions">
+						<div class="zm-meta-panel">
+							<span itemprop="url" class="answer-date-link meta-item" data-tooltip="" target="_blank" style="margin-left: 20px;">编辑于：{$it.for_time}</span>
+							<a href="{:U('Forum/ReplyPost/index')}?for_num={$it.for_num}" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">查看详情</a>
 
-						<span>
-						<a class="author-link" title="查看用户详情" data-hovercard="" target="_blank" href="{:U('Forum/UserDetail/show')}?ID={$it.for_id}">{$it.for_name}</a>
-						</span>
-						<span itemprop="url" class="answer-date-link meta-item" data-tooltip="" target="_blank">编辑于：{$it.for_time}</span>
-						<a href="{:U('Forum/ReplyPost/index')}?for_num={$it.for_num}" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">查看详情</a>
+							<span id="r_">
+								<span class="zg-bull zu-autohide">{$it.for_join}&#12288;评论&#12288;</span>
 
-						<span id="r_">
-							<span class="zg-bull zu-autohide">{$it.for_join} 评论</span>
-							<span class="zg-bull zu-autohide">&bull; {$it.for_up}</span>
-							<a href="#" name="" class="">
-							<i class="z-icon-comment"></i>
-							<span id="zan" onclick="zan_click('#{$it.for_num}')"> 赞</span></a>
-							<span class="zg-bull zu-autohide">&bull; {$it.for_down}</span>
-							<a href="#" name="" class="">
-							<i class="z-icon-comment"></i>
-							<span id="zan" onclick="zan_click('#{$it.for_num}')"> 踩</span></a>
-							<span class="zg-bull zu-autohide">&bull; {$it.for_report}</span>				
-							<a href="#" name="" class="">
-							<i class="z-icon-comment"></i>
-							<span id="zan" onclick="zan_click('#{$it.for_num}')">举报</span></a>
-							<span class="zg-bull zu-autohide">&bull;</span>
-							<a href="{:U('Forum/UserDetail/alterPost')}?alter_main_num={$it.for_num}">修改</a>
-							<span class="zg-bull zu-autohide">&bull;</span>
-							<a ><span onclick="show_dele('#sure_{$it.for_num}')">删除</span></a>
-							&bull;
-							<a class="dele" id="sure_{$it.for_num}" href="{:U('Forum/UserDetail/deletePost')}?delete_main_num={$it.for_num}&delete_true=0">确认删除</a>
-							
+								<span class="zg-bull zu-autohide">&bull;&#12288;{$it.for_up}&#12288;赞&#12288;</span>
 
-						</span>
+								<span class="zg-bull zu-autohide">&bull;&#12288;{$it.for_down}&#12288;踩&#12288;</span>
 
+								<span class="zg-bull zu-autohide">&bull;&#12288;{$it.for_report}&#12288;举报&#12288;</span>
+								&bull;&#12288;
+								<a href="{:U('Forum/UserDetail/alterPost')}?alter_main_num={$it.for_num}">修改</a>
+								&#12288;
+								<span class="zg-bull zu-autohide">&bull;&#12288;</span>
+								<a ><span onclick="show_dele('#sure_{$it.for_num}')">删除&#12288;</span></a>
+								&bull;&#12288;
+								<a class="dele" id="sure_{$it.for_num}" href="{:U('Forum/UserDetail/deletePost')}?delete_main_num={$it.for_num}&delete_true=0"><font color="red">确认删除</font></a>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</foreach>
-	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-	<script src="__PUBLIC__/Forum/js/xq_navbar.js"></script>
-	<script>
-		$(function(){
-			$("#bar1").xq_navbar({"type":"underline","liwidth":"auto","bgcolor":"#000","hcolor":"#f0f"});
-			$("#bar2").xq_navbar({"type":"beat","liwidth":"avg","bgcolor":"#000","hcolor":"#f0f"});
-			$("#bar3").xq_navbar({"type":"line","liwidth":"avg","bgcolor":"#000"});
-			$("#bar4").xq_navbar({"type":"overline","liwidth":"120","bgcolor":"#000"});
-			$("#bar5").xq_navbar({"type":"block","liwidth":"avg","bgcolor":"#000","hcolor":["blue","rgb(10;,100,100)","red","pink","green","rgba(23,234,22,1)","rgb(230,230,230)"]});
-		});
-		function zan_click(what){
-			var zan=$(what).text();
-			$(what).text(++zan);
-		};
-	</script>
+		</foreach>
+		<h3 style="margin-left: 75%;">{$page}</h3>
+		
+	</div>
+</div>
+
+<div class="nav-main">
+<div class="nav-box">
+<div class="nav">
+  <ul class="nav-ul">
+  			<li><a href="{:U('Forum/MainPost/index')}"><span>返回论坛主页</span></a></li>
+			<li><a href="{:U('Forum/UserDetail/myPost')}"><span>我的主帖管理</span></a></li>
+			<li><a href="{:U('Forum/ReplyPost/myReply')}"><span>我的回复管理</span></a></li>
+			<li><a href="{:U('Forum/UserDetail/modify')}"><span>个人信息管理</span></a></li>
+			<li><a href="{:U('Forum/Login/logout')}"><span>注销</span></a></li>
+  </ul>
+</div>
+<div class="nav-slide">
+    <div class="nav-slide-o"></div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a href="{:U('Forum/MainPost/addMain')}"><span>新增主贴</span></a></li>
+			<li><a href="{:U('Forum/UserDetail/myPost')}"><span>我的发帖</span></a></li>
+			<li><a href="{:U('Forum/UserDetail/recovery')}"><span>回收站</span></a></li>
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+    	<ul>
+			<li><a href="{:U('Forum/ReplyPost/myReply')}"><span>我的回复</span></a></li>
+			<li><a href="{:U('Forum/ReplyPost/recovery')}"><span>回收站</span></a></li>
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a href="{:U('Forum/UserDetail/modify')}"><span>修改个人信息</span></a></li>
+			<li><a href="{:U('Forum/UserID/modify')}"><span>修改登陆密码</span></a></li>
+    	</ul>
+    </div>
+</div>
+</div>
+</div>
+
+
 	<script type="text/javascript">
-	function show_dele(what){
-		$(what).show();
-	};
-	$(".dele").hide();
+		function show_dele(what){
+			$(what).show();
+		};
+		$(".dele").hide();
+	</script>
+<script type="text/javascript" src="__PUBLIC__/Forum/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	var thisTime;
+	$('.nav-ul li').mouseleave(function(even){
+			thisTime	=	setTimeout(thisMouseOut,1000);
+	})
+
+	$('.nav-ul li').mouseenter(function(){
+		clearTimeout(thisTime);
+		var thisUB	=	$('.nav-ul li').index($(this));
+		if($.trim($('.nav-slide-o').eq(thisUB).html()) != "")
+		{
+			$('.nav-slide').addClass('hover');
+			$('.nav-slide-o').hide();
+			$('.nav-slide-o').eq(thisUB).show();
+		}
+		else{
+			$('.nav-slide').removeClass('hover');
+		}
+
+	})
+
+	function thisMouseOut(){
+		$('.nav-slide').removeClass('hover');
+	}
+
+	$('.nav-slide').mouseenter(function(){
+		clearTimeout(thisTime);
+		$('.nav-slide').addClass('hover');
+	})
+	$('.nav-slide').mouseleave(function(){
+		$('.nav-slide').removeClass('hover');
+	})
+
+})
 </script>
 </body>
-
 </html>
