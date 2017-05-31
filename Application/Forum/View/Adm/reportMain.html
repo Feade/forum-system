@@ -134,23 +134,20 @@
 							</span>&#12288;&#12288;&#12288;
 							<span class="zg-bull zu-autohide">{$it.for_up}
 							</span>
-							<a href="{:U('Forum/Operate/mainUp')}?for_num={$it.for_num}" name="" class="">
-								<i class="z-icon-comment"></i>
+							<a href="{:U('Forum/Operate/mainUp')}?for_num={$it.for_num}">		
 								<span> 点赞</span>
 							</a>
 							<span class="zg-bull zu-autohide">&bull; {$it.for_down}</span>
-							<a href="{:U('Forum/Operate/mainDown')}?for_num={$it.for_num}" name="" class="">
-								<i class="z-icon-comment"></i>
+							<a href="{:U('Forum/Operate/mainDown')}?for_num={$it.for_num}">	
 								<span> 板砖</span>
 							</a>
 							<span class="zg-bull zu-autohide">&bull; {$it.for_report}</span>
-							<a href="{:U('Forum/Operate/mainReport')}?for_num={$it.for_num}" name="" class="">
-								<i class="z-icon-comment"></i>
+							<a href="{:U('Forum/Adm/resetReport')}?status=1&for_num={$it.for_num}" title="清零举报值">								
 								<span> 举报</span>
 							</a>
 							&nbsp; &nbsp;
-							<a href="{:U('Forum/Adm/deleteMain')}?for_num={$it.for_num}" name="" class="">
-								<i class="z-icon-comment"></i><span id="{$it.for_num}"></span> <span>    <font color="#FF0000">删除</font></span>
+							<a href="{:U('Forum/Adm/deleteMain')}?for_num={$it.for_num}">
+								<span id="{$it.for_num}"></span> <span>    <font color="#FF0000">删除</font></span>
 							</a>
 						</span>
 				</div>

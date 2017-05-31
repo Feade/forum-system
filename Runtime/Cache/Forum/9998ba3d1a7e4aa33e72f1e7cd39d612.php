@@ -16,8 +16,12 @@
 	</script>
 	<style type="text/css">
 		body{
-			margin-left:auto;
-			margin-right:auto;
+			background-image: url(/forum-system/Public/Forum/image/usertimg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        min-height: 1000px;
 			margin-top:50PX;
 			width:100%;
 		}

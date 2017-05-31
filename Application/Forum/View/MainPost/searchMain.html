@@ -24,7 +24,14 @@
 	</script>
 	<style type="text/css">
 		body{
-			background-color: #CCCCCC;
+			background-image: url(__PUBLIC__/Forum/image/timg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        margin-top:20PX;
+	        width:90%;
+	        min-height: 1000px;
 		}
 		body .item{
 			width:70%;
@@ -128,7 +135,7 @@
 		<input type="text" name="for_title" class="input-g" placeholder="搜索主贴">
 		<button type="submit" class="btn">搜索</button>
 	</form>
-	<button class="btn" style="position: fixed;top: 55px;left: 85%; width: 100px;height: 30px;"><a href="{:U('Forum/MainPost/moreSearch')}">使用高级搜索</a></button>
+	<a href="{:U('Forum/MainPost/moreSearch')}"><button class="btn" style="position: fixed;top: 55px;left: 85%; width: 100px;height: 30px;">使用高级搜索</button></a>
 
 	<div style="margin-left: 15%;margin-top: 10px;" id="pageBar">{$page}</div>
 	<div id="flip" class="navigation">

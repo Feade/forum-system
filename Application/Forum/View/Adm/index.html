@@ -4,7 +4,20 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>论坛后台管理</title>
-
+<script type="text/javascript">
+ window.onload = function() {
+  var show = document.getElementById("showTime");
+  setInterval(function() {
+   var time = new Date();
+   // 程序计时的月从0开始取值后+1
+   var m = time.getMonth() + 1;
+   var t = time.getFullYear() + "-" + m + "-"
+   + time.getDate() + " " + time.getHours() + ":"
+   + time.getMinutes() + ":" + time.getSeconds();
+   show.innerHTML = t;
+ }, 1000);
+};
+</script>
 <style  type="text/css">
 body{
 	margin:0;
@@ -114,6 +127,7 @@ body{
 				</span>
 			</div>
 		</div>
+		<div id="showTime"></div>
 		<div style="margin-top: 80px;color: silver;float: right;">既然选择了远方，何惧风雨兼程！</div>
 	</div>
 	<iframe src="{:U('Forum/Adm/welcome')}" frameborder="0" width="100%" height="900px" name="right_content" scrolling="auto"></iframe>

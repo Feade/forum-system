@@ -124,7 +124,7 @@ class BaseController extends Controller
             $findValue=M("tfor_detail")->where($who)->field('for_value')->find();
             $newValue['for_value']=$value+intval($findValue['for_value']);            
         }
-        $newValue['for_level']=$this->newLevel($value);
+        $newValue['for_level']=$this->newLevel($newValue['for_value']);
         $ret=M('tfor_detail')->where($who)->save($newValue);
     }
 
@@ -155,6 +155,26 @@ class BaseController extends Controller
                 ++$count;
             }
             return $count;
+        }
+    }
+    /**
+     * 修改用户未读消息
+     * @param [type]  $who    [description]
+     * @param integer $status [description]
+     */
+    protected function modifyMessage($who,$status=1)
+    {
+        $condition['for_id']=$who;
+        if($status==1)
+        {
+            $message=M('tfor_detail')->where($condition)->field('for_message')->find();
+            $message['for_message']+=1;
+            $ret=M('tfor_detail')->where($condition)->save($message);       
+        }
+        else
+        {
+            $message['for_message']=0;
+            $ret=M('tfor_detail')->where($condition)->save($message);
         }
     }
 }

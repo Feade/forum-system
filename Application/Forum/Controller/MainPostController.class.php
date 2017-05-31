@@ -6,11 +6,144 @@ use Think\Controller;
 class MainPostController extends BaseController
 {
     /**
+     * 主贴首页(时间顺序)
+     * @return [type] [description]
+     */
+    public function index()
+    {
+        $class=M('tfor_class');
+        $list=$class->field('for_class')->select();
+        $this->assign('list',$list);
+        $count=M('tfor_main')->where('for_flag=1')->order('for_time desc')->count();
+        $Page=getpage($count,20);
+        $MainPost=M('tfor_main')->join('LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id')->where('for_flag=1')->order('for_num desc,for_time')->limit($Page->firstRow.','.$Page->listRows)->select();
+
+
+        $circular=M('tfor_circular')->field('for_num,for_title')->order('for_time desc')->limit(5)->select();
+        $this->assign('circular',$circular);
+        $this->assign('list_post',$MainPost);
+        $this->assign('page',$Page->show());
+        if($_SESSION['name'])
+        {
+            $user['for_id']=$_SESSION['name'];
+            $head=M('tfor_detail')->where($user)->field('for_head')->find();
+            $this->assign('userHead',$head);
+            $this->display();
+        }
+        else
+        {   
+            $head['for_head']='login.jpg';  
+            $this->assign('userHead',$head);
+            $this->display();
+        }
+    }
+    public function searchCircular()
+    {
+        $class=M('tfor_class');
+        $list=$class->field('for_class')->select();
+        $this->assign('list',$list);
+        if(IS_POST || $_GET)
+        {
+            if(IS_POST){$condition=$_POST;} 
+            else if($_GET){$condition=$_GET;} 
+
+            $searchLike="%".$condition['for_title']."%";
+            $searchCircular['for_title']=array('like',$searchLike);
+            $count =M('tfor_circular')->where($searchCircular)->count();
+            if($count)
+            {
+                $Page =getpage($count,10);
+                foreach ($condition as $key => $val) 
+                {
+                    $Page->parameter[$key] = $val;            
+                }
+                $circular=M('tfor_circular')->where($searchCircular)->order('for_num desc,for_time')->limit($Page->firstRow.','.$Page->listRows)->select();
+                $this->assign('circular',$circular);
+                $this->assign('page',$Page->show());
+                if($_SESSION['name'])
+                {
+                    $user['for_id']=$_SESSION['name'];
+                    $head=M('tfor_detail')->where($user)->field('for_head')->find();
+                    $this->assign('userHead',$head);
+                    $this->display();
+                }
+                else
+                {   
+                    $head['for_head']='login.jpg';  
+                    $this->assign('userHead',$head);
+                    $this->display();
+                }
+            }
+            else
+            {
+                $this->error('没有查询到相关数据！请重新搜索...',U("Forum/MainPost/circular"));
+            }
+        }
+        else
+        {
+            $this->error('搜索内容为空！',U("Forum/MainPost/circular"));
+        }
+
+    }
+    public function showCircular()
+    {
+        $class=M('tfor_class');
+        $list=$class->field('for_class')->select();
+        $this->assign('list',$list);
+        $condition['for_num']=$_GET['for_num'];
+        $circular=M('tfor_circular')->where($condition)->find();
+        $this->assign('circular',$circular);
+        if($_SESSION['name'])
+        {
+            $user['for_id']=$_SESSION['name'];
+            $head=M('tfor_detail')->where($user)->field('for_head')->find();
+            $this->assign('userHead',$head);
+            $this->display();
+        }
+        else
+        {   
+            $head['for_head']='login.jpg';  
+            $this->assign('userHead',$head);
+            $this->display();
+        }
+    }
+    /**
+     * 用户查看通告详情
+     * @return [type] [description]
+     */
+    public function circular()
+    {
+        $class=M('tfor_class');
+        $list=$class->field('for_class')->select();
+        $this->assign('list',$list);
+
+        $count =M('tfor_circular')->count();
+        $Page =getpage($count,10);
+        $circular=M('tfor_circular')->order('for_num desc,for_time')->limit($Page->firstRow.','.$Page->listRows)->select();
+        $this->assign('circular',$circular);
+        $this->assign('page',$Page->show());
+        if($_SESSION['name'])
+        {
+            $user['for_id']=$_SESSION['name'];
+            $head=M('tfor_detail')->where($user)->field('for_head')->find();
+            $this->assign('userHead',$head);
+            $this->display();
+        }
+        else
+        {   
+            $head['for_head']='login.jpg';  
+            $this->assign('userHead',$head);
+            $this->display();
+        }
+    }
+    /**
      * 查看主贴(评论数或点赞数顺序)
      * @return [type] [description]
      */
     public function hotMain()
     {
+        $circular=M('tfor_circular')->field('for_num,for_title')->order('for_time desc')->limit(5)->select();
+        $this->assign('circular',$circular);
         if($_GET['hot']==1)
         {
             $class=M('tfor_class');
@@ -96,37 +229,7 @@ class MainPostController extends BaseController
             } 
         }
     }
-	/**
-	 * 主贴首页(时间顺序)
-	 * @return [type] [description]
-	 */
-    public function index()
-    {
-		$class=M('tfor_class');
-		$list=$class->field('for_class')->select();
-		$this->assign('list',$list);
-
-		$MainPost=M('tfor_main')->join('LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id')->where('for_flag=1')->order('for_num desc,for_time')->select();
-		for ($i=0; $i < count($MainPost,0); $i++)
-		{ 
-            $MainPost[$i]['for_text']=htmlspecialchars_decode($MainPost[$i]['for_text']);
-        }
-		$this->assign('list_post',$MainPost);
-		if($_SESSION['name'])
-		{
-			$user['for_id']=$_SESSION['name'];
-			$head=M('tfor_detail')->where($user)->field('for_head')->find();
-			$this->assign('userHead',$head);
-			$this->display();
-		}
-		else
-		{	
-			$head['for_head']='login.jpg';	
-			$this->assign('userHead',$head);
-			$this->display();
-		}
-    }
-
+	
 
     public function order()
     {

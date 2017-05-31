@@ -110,15 +110,11 @@ class UserDetailController extends BaseController
         if($count)
         {
             $Page=getpage($count,10);
-
             $class=M('tfor_class');
             $list=$class->field('for_class')->select();
             $this->assign('list',$list);
+            $this->modifyMessage($_SESSION['name'],0);//未读消息清零
             $MainPost=M('tfor_main')->join('LEFT JOIN tfor_detail ON tfor_main.for_id = tfor_detail.for_id')->where('for_flag=%d and tfor_main.for_id=%d',$flag,$_SESSION['name'])->order('for_num desc,for_time')->limit($Page->firstRow.','.$Page->listRows)->select();
-            // for ($i=0; $i < count($MainPost,0); $i++)
-            // {
-            //     $MainPost[$i]['for_text']=htmlspecialchars_decode($MainPost[$i]['for_text']);
-            // }
             $this->assign('page',$Page->show());
             $this->assign('list_post',$MainPost);
             $user['for_id']=$_SESSION['name'];

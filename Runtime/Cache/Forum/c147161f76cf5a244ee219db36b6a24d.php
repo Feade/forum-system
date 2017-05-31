@@ -23,7 +23,14 @@
 	</script>
 	<style type="text/css">
 		body{
-			background-color: #CCCCCC;
+			background-image: url(/forum-system/Public/Forum/image/timg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        margin-top:20PX;
+	        width:90%;
+	        min-height: 1000px;
 		}
 		body .item{
 			width:70%;
@@ -127,13 +134,18 @@
 	<title>论坛主页</title>
 </head>
 <body>
-
-	<br><br><br>
-	<form action="<?php echo U('Forum/MainPost/searchMain');?>" method="post" class="form-horizontal" name="myForm" onsubmit="return validateForm();">
-		<input type="text" name="for_title" class="input-g" placeholder="搜索主贴">
-		<button type="submit" class="btn">搜索</button>
-	</form>
-	<button class="btn" style="position: fixed;top: 55px;left: 85%; width: 100px;height: 30px;"><a href="<?php echo U('Forum/MainPost/moreSearch');?>">使用高级搜索</a></button>
+	<a href="<?php echo U('Forum/MainPost/moreSearch');?>"><button class="btn" style="position: fixed;top: 100px;left: 90%; width: 80px;height: 30px;">
+		高级搜索
+	</button></a>
+	<div  style="position: fixed;top: 55px;left: 80%; width: 100px;height: 30px;">
+		<form action="<?php echo U('Forum/MainPost/searchMain');?>" method="post" name="myForm" onsubmit="return validateForm();">
+			<input type="text" name="for_title"  placeholder="搜索主贴">
+			<button type="submit" class="btn" style="position: fixed;top: 55px;left: 90%; width: 80px;height: 30px;">搜索</button>
+		</form>
+	</div>
+	<button type="button" style="position: fixed;bottom: 20px;left:  93%; color: #333333;font-weight: 15px;width: 100px;height: 40px;" class="btn btn-default btn-lg">
+		<a href="#top" style="color:  #333333;font-weight: 10px;">返回顶部</a>
+	</button>
 	<div id="flip" class="navigation">
 		<div class="button-navigation">
 			<a href="<?php echo U('Forum/UserDetail/index');?>">
@@ -216,7 +228,6 @@
 					</div><?php endforeach; endif; ?>
 				<h3 style="margin-left: 70%;"><?php echo ($page); ?></h3>
 
-				<button type="button" style="position: fixed;bottom: 20px;left: 95%; color: #333333;font-weight: 15px;width: 100px;height: 40px;" class="btn btn-default btn-lg"><a href="#top" style="color:  #333333;font-weight: 15px;">返回顶部</a></button>
 				<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 				<script src="/forum-system/Public/Forum/js/xq_navbar.js"></script>
 				<script>

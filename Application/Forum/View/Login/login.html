@@ -121,10 +121,7 @@
 	width: 100%;
 	position: absolute;
 	top: 600px;
-	/*height: 600px;*/
 	bottom: 0px;
-	/*height: 600px;*/
-	/*margin-left: 8px;*/
 }
 .img-login{
 	width: 20px;
@@ -248,7 +245,7 @@ $(document).ready(function(){
 </div>
 
 <div class="login-background">
-	<form action="{:U('Forum/Login/login')}" method="post" style="width: 300px;height: 200px; margin-top: 0px; margin-left: 40%;">
+	<form action="{:U('Forum/Login/login')}" method="post" style="width: 300px;height: 200px; margin-top: 0px; margin-left: 40%;" name="myForm" onsubmit="return checkForm();">
 		<br><br>
 		<div class="input-group">
 			 <span class="input-group-addon" id="basic-addon1"><img class="img-login" src="__PUBLIC__/Forum/img/head.jpg"></span>
@@ -259,13 +256,35 @@ $(document).ready(function(){
 			<input class="form-control" type="password" name="password" placeholder="密码" >
 		</div>
 
-
-
 		<button  class="btn btn-default" type="reset" style="margin-top: 20px; width:80px;margin-left:90px;">重置</button>
 		<button  class="btn btn-default" type="submit" style="margin-top: 20px; width:80px;margin-left: 40px;">登录</button>
 
-		<div style="float: right;margin-top: 20px;"><a href="{:U('Forum/Adm/login')}" style="color: #333333;" title="后台管理登陆入口">我是管理员</a></div>
+		<div style="float: right;margin-top: 20px;"><a href="{:U('Forum/MainPost/index')}" style="color: #333333;" title="游客浏览">游客浏览</a><span>&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;</span><a href="{:U('Forum/Adm/login')}" style="color: #333333;" title="后台管理登陆入口">我是管理员</a></div>
 	</form>
 </div>
+<!-- <script type="text/javascript" src="__PUBLIC__/Forum/js/jquery-1.9.1.min.js"></script> -->
+
+<script type="text/javascript">
+	function checkForm()
+	{
+		var id=document.forms["myForm"]["name"].value;
+		var password=document.forms["myForm"]["password"].value;
+		if (id==null || id=="")
+		{
+			alert("用户ID必须填写！");
+			return false;
+		}
+		if(password==null || password=="")
+		{
+			alert("密码必须填写");
+			return false;
+		}
+		if(password.length>0 && password.length<6)
+		{
+			alert("密码长度不少于6位");
+			return false;
+		}
+	}
+</script>
 </body>
 </html>

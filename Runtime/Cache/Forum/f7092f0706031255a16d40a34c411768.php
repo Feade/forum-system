@@ -26,9 +26,16 @@
 
   <style type="text/css">
     body{
-    	background-color: #CCCCCC;
+    	     background-image: url(/forum-system/Public/Forum/image/timg.jpg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          margin-left:auto;
+          margin-right:auto;
+          /*margin-top:20PX;*/
+          /*width:90%;*/
+          min-height: 1000px;
       width:80%;
-      margin: auto;
+      /*margin: auto;*/
       margin-top:50px;
     }
     .nav{
@@ -41,7 +48,7 @@
       width: 100%;
     }
     .item{
-      min-height: 100px;
+      min-height: 120px;
       position: relative;
       border: 1px solid #999;
       height: auto;

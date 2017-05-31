@@ -1,501 +1,296 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
-<title>Viewport a Magazine Category Flat Bootstarp responsive Website Template| Home :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Viewport Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstarp-css -->
-  <!-- <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-<link href="/forum-system/Public/Forum/css/bootstraps.css" rel="stylesheet" type="text/css" media="all" />
-<!--// bootstarp-css -->
-<!-- css -->
-<link rel="stylesheet" href="/forum-system/Public/Forum/css/styles.css" type="text/css" media="all" />
-<!--// css -->
-<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- <script src="js/jquery.min.js"></script> -->
-<!--fonts-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!--/fonts-->
-<!-- dropdown -->
-<script src="/forum-system/Public/Forum/js/jquery.easydropdown.js"></script>
-<link href="/forum-system/Public/Forum/css/nav.css" rel="stylesheet" type="text/css" media="all"/>
-<script src="/forum-system/Public/Forum/js/scripts.js" type="text/javascript"></script>
-<!--js-->
-<!--/js-->
-<script src="/forum-system/Public/Forum/js/easyResponsiveTabs.js" type="text/javascript"></script>
-		    <script type="text/javascript">
-			    $(document).ready(function () {
-			        $('#horizontalTab').easyResponsiveTabs({
-			            type: 'default', //Types: default, vertical, accordion           
-			            width: 'auto', //auto or any width like 600px
-			            fit: true   // 100% fit in a container
-			        });
-			    });
-			   </script>	
-<!-- start-smoth-scrolling -->
-		<!-- <script type="text/javascript" src="js/move-top.js"></script> -->
-		<!-- <script type="text/javascript" src="js/easing.js"></script> -->
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no"/>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="shortcut icon" href="/forum-system/Public/Forum/image/login.ico">
+	<link href="/forum-system/Public/Forum/Css/mypage.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="/forum-system/Public/Forum/css/xq_navbar.css"/>
+	<link rel="stylesheet" href="/forum-system/Public/Forum/css/xq.css"/>
+	<link rel="stylesheet" href="/forum-system/Public/Forum/css/breakingnews.css">
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/forum-system/Public/Forum/js/jquery-1.8.3.min.js"></script>
+	<script src="/forum-system/Public/Forum/js/breakingnews.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#flip").click(function(){
+				$("#panel").slideToggle("slow");
 			});
-		</script>
-<!-- slider -->
-<script src="/forum-system/Public/Forum/js/responsiveslides.min.js"></script>
-<script>
-    // You can also use "$(window).load(function() {"
-    $(function () {
-      $("#slider").responsiveSlides({
-      	auto: true,
-        manualControls: '#slider3-pager',
-      });
-    });
-  </script>
-<!-- slider -->
+			$("#panel").hide();
+		});
+		$(function(){
+			$('#breakingnews2').BreakingNews({
+				title: '通告',
+				titlebgcolor: '#099',
+				linkhovercolor: '#099',
+				border: '1px solid #099',
+				timer: 4000,
+				effect: 'slide'
+			});
+
+		});
+	</script>
+	<style type="text/css">
+		body{
+			/*background-color: #CCCCCC;        */
+			background-image: url(/forum-system/Public/Forum/image/timg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        margin-top:20PX;
+	        width:90%;
+	        min-height: 1000px;
+	        /*height: 1000px;*/
+		}
+		body .item{
+			width:70%;
+		}
+		.demo {
+			width: 700px;
+			height: 50px;
+			margin: 0 auto;
+		}
+
+		.demo2 {
+			margin-top: 50px;
+		}
+		.nav{
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 20;
+			width: 100%;
+		}
+		.item{
+			margin:20px auto 20px auto;
+			box-shadow: 0 0 5px #e4e6e8;
+			padding: 10px;
+			position: relative;
+			width: 600px;
+			height: 120px;
+			margin-bottom: 20px;
+
+		}
+		#first-item{
+			margin-top: 20px;
+		}
+
+		.d1{
+			float: left;
+			width: 50px;
+			height: 100px;
+		}
+		.title{
+
+			font-size: 20px;
+			margin-left: 50px;
+			padding-left: 30px;
+			padding-top: 20px;
+			height: 70px;
+
+		}
+		.item:hover{
+			box-shadow: 0 0 5px #c2c2c2;
+		}
+		.feed-meta{
+
+			margin-left: 50px;
+			height: 20px;
+			bottom:15px;
+		}
+		.img-rounded{
+			margin-top: 25px;
+			width:50px;
+			height: 50px;
+			border-radius: 25px;
+
+		}
+		#r_{
+			float:right;
+		}
+		.navigation{
+			left: 95%;
+			top: 55px;
+			width: 80px;
+			float: right;
+		}
+		#flip{
+			position: fixed;
+		}
+		.img-navigation{
+			width:50px;
+			height: 50px;
+			float: right;
+			border-radius: 25px;
+		}
+		.button-navigation{
+			width: 51px;
+			height: 52px;
+			border-radius: 25px;
+			background-color: #330066;
+			margin-top: 5px;
+			margin-right:  5px;
+			float: right;
+		}
+		.btn{
+			position: absolute;
+			height: 30px;
+			width: 50px;
+			left: 1310px;
+			border-radius: 5px;
+		}
+		.input-g{
+			position: absolute;
+			height: 30px;
+			width: 300px;
+			left: 1000px;
+			border-radius: 5px;
+		}
+		.circular{
+			position: fixed;
+			left: 20px;
+			top: 100px;
+			margin-top: 10px;
+		}
+
+	</style>
+	<title>论坛主页</title>
 </head>
 <body>
-	<div id="home" class="header">
-		<div class="header-top">
-			<!-- container -->
-			<div class="container">
-				<div class="top-nav">
-					<ul class="nav">
-						<li>06 Dec 2010</li>                                          
-						<li class="dropdown1"><a href="#">Sample Page</a>
-							<ul class="dropdown2">
-								<li><a href="lifestyle.html">Blog Page</a></li>
-								<li><a href="archives.html">Archive Page</a></li>
-								<li><a href="fullwidth.html">Full Width Page</a></li>
-								<li><a href="contact.html">Contact Page</a></li>
-							</ul>
-						</li>
-						<li class="dropdown1"><a href="#">Page Layouts</a>
-							<ul class="dropdown2">
-								<li><a href="lifestyle.html">Blog Page</a></li>
-								<li><a href="archives.html">Archive Page</a></li>
-								<li><a href="fullwidth.html">Full Width Page</a></li>
-								<li><a href="contact.html">Contact Page</a></li>
-							</ul>
-						</li>     
-						<li class="dropdown1"><a href="#">Page Templates</a>
-							<ul class="dropdown2">
-								<li><a href="lifestyle.html">Blog Page</a></li>
-								<li><a href="archives.html">Archive Page</a></li>
-								<li><a href="fullwidth.html">Full Width Page</a></li>
-								<li><a href="contact.html">Contact Page</a></li>
-							</ul>
-						</li>              			           
-						<li class="dropdown1"><a href="#">Theme Colors</a>
-							<ul class="dropdown2">
-								<li><a href="lifestyle.html">Blog Page</a></li>
-								<li><a href="archives.html">Archive Page</a></li>
-								<li><a href="fullwidth.html">Full Width Page</a></li>
-								<li><a href="contact.html">Contact Page</a></li>
-							</ul>
-						</li>            
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</div>
-				<div class="nav-right">
-					<p>Subscribe by <a href="#">RSS</a> or <a href="mailto:example@email.com">Emaiil</a> for updates!
-				</div>
-				<div class="clearfix"> </div>
-				<!-- script-for-menu -->
-			</div>
-			<!-- //container -->
+	<a href="<?php echo U('Forum/MainPost/moreSearch');?>"><button class="btn" style="position: fixed;top: 100px;left: 90%; width: 80px;height: 30px;">
+		高级搜索
+	</button></a>
+	<div  style="position: fixed;top: 55px;left: 80%; width: 100px;height: 30px;">
+		<form action="<?php echo U('Forum/MainPost/searchMain');?>" method="post" name="myForm" onsubmit="return validateForm();">
+			<input type="text" name="for_title"  placeholder="搜索主贴">
+			<button type="submit" class="btn" style="position: fixed;top: 55px;left: 90%; width: 80px;height: 30px;">搜索</button>
+		</form>
+	</div>
+	<button type="button" style="position: fixed;bottom: 20px;left:  93%; color: #333333;font-weight: 15px;width: 100px;height: 40px;" class="btn btn-default btn-lg">
+		<a href="#top" style="color:  #333333;font-weight: 10px;">返回顶部</a>
+	</button>
+
+	<div id="flip" class="navigation">
+		<div class="button-navigation">
+			<a href="<?php echo U('Forum/UserDetail/index');?>">
+				<img class="img-navigation" src="/forum-system/Public/Forum/image/<?php echo ($userHead["for_head"]); ?>">
+			</a>
 		</div>
-		<div class="header-bottom">
-			<!-- container -->
-			<div class="container">
-				<div class="head-logo">
-					<a href="index.html"><img src="/forum-system/Public/Forum/images/logo.png" alt="" /></a>
-				</div>
-				<div class="logo-right">
-					<p>468 x 60</p>
-				</div>
-				<div class="clearfix"> </div>
+		<div class="button-navigation">
+			<img class="img-navigation" src="/forum-system/Public/Forum/image/menu.jpg">
+		</div>
+		<div id="panel" class="navigation">
+			<div class="button-navigation">
+				<a href="<?php echo U('Forum/MainPost/addMain');?>" title="新增主贴">
+					<img class="img-navigation" src="/forum-system/Public/Forum/image/new.jpg">
+				</a>
 			</div>
-			<!-- //container -->
+			<div class="button-navigation">
+				<a href="<?php echo U('Forum/MainPost/index');?>" title="返回论坛主页">
+					<img class="img-navigation" src="/forum-system/Public/Forum/image/homepage.jpg">
+				</a>
+			</div>
+			<div class="button-navigation">
+				<a href="<?php echo U('Forum/Login/logout');?>" title="注销">
+					<img class="img-navigation" src="/forum-system/Public/Forum/image/exit.jpg">
+				</a>
+			</div>
 		</div>
 	</div>
-	<!-- //header -->	
-	<!-- bg-banner -->
-	<div class="bg-banner">
-		<div class="banner-bottom-bg">
-			<div class="banner-bg"> 
-				<div class="container">
-					<!-- banner -->
-					<div class="banner">
-						<div class="banner-grids">
-							<div class="banner-top">
-								<span class="menu">MENU</span>
-								<ul class="nav banner-nav">
-										<li>06 Dec 2010</li>                                          
-										<li class="dropdown1"><a href="index.html">Sample Page<span>From Around The Globe</span></a>
-											<ul class="dropdown2">
-												<li><a href="lifestyle.html">Blog Page</a></li>
-												<li><a href="archives.html">Archive Page</a></li>
-												<li><a href="fullwidth.html">Full Width Page</a></li>
-												<li><a href="contact.html">Contact Page</a></li>
-											</ul>
-										</li>
-										<li class="dropdown1"><a href="celebrity.html">Celebrity News<span>Juicy Hollywood Gossip</span></a>
-											<ul class="dropdown2">
-												<li><a href="lifestyle.html">Blog Page</a></li>
-												<li><a href="archives.html">Archive Page</a></li>
-												<li><a href="fullwidth.html">Full Width Page</a></li>
-												<li><a href="contact.html">Contact Page</a></li>
-											</ul>
-										</li>     
-										<li class="dropdown1"><a href="404.html">Technology<span>Apps, Internet & Gadgets</span></a>
-											<ul class="dropdown2">
-												<li><a href="lifestyle.html">Blog Page</a></li>
-												<li><a href="archives.html">Archive Page</a></li>
-												<li><a href="fullwidth.html">Full Width Page</a></li>
-												<li><a href="contact.html">Contact Page</a></li>
-											</ul>
-										</li>              			           
-										<li class="dropdown1"><a href="lifestyle.html">Lifestyle Tips<span>Your Health & Happiness</span></a>
-											<ul class="dropdown2">
-												<li><a href="lifestyle.html">Blog Page</a></li>
-												<li><a href="archives.html">Archive Page</a></li>
-												<li><a href="fullwidth.html">Full Width Page</a></li>
-												<li><a href="contact.html">Contact Page</a></li>
-											</ul>
-										</li> 
-										<li class="dropdown1"><a href="celebrity.html">Entertainment<span>Movies, Music & Reviews</span></a>
-											<ul class="dropdown2">
-												<li><a href="lifestyle.html">Blog Page</a></li>
-												<li><a href="archives.html">Archive Page</a></li>
-												<li><a href="fullwidth.html">Full Width Page</a></li>
-												<li><a href="contact.html">Contact Page</a></li>
-											</ul>
-										</li> 
-										<li class="dropdown1"><a href="travel.html">Travel News<span>Travel News, Guides & Tips</span></a>
-											<ul class="dropdown2">
-												<li><a href="lifestyle.html">Blog Page</a></li>
-												<li><a href="archives.html">Archive Page</a></li>
-												<li><a href="fullwidth.html">Full Width Page</a></li>
-												<li><a href="contact.html">Contact Page</a></li>
-											</ul>
-										</li> 
-								</ul>
-								<script>
-									$("span.menu").click(function(){
-										$(" ul.nav").slideToggle("slow" , function(){
-										});
-									});
-								</script>
-							</div>
-							<div class="banner-middle">
-								<div class="strip"> </div>
-								<div class="slider">
-									<!-- Slideshow 3 -->
-									<ul class="rslides" id="slider">
-									  <li><img src="/forum-system/Public/Forum/images/1.jpg" alt=""></li>
-									  <li><img src="/forum-system/Public/Forum/images/2.jpg" alt=""></li>
-									  <li><img src="/forum-system/Public/Forum/images/3.jpg" alt=""></li>
-									  <li><img src="/forum-system/Public/Forum/images/4.jpg" alt=""></li>
-									  <li><img src="/forum-system/Public/Forum/images/5.jpg" alt=""></li>
-									  <li><img src="/forum-system/Public/Forum/images/6.jpg" alt=""></li>
-									</ul>
-									<!-- Slideshow 3 Pager -->
-									<ul id="slider3-pager">
-									  <li><a href="#"><img src="/forum-system/Public/Forum/images/1c.jpg" alt=""></a></li>
-									  <li><a href="#"><img src="/forum-system/Public/Forum/images/2c.jpg" alt=""></a></li>
-									  <li><a href="#"><img src="/forum-system/Public/Forum/images/3c.jpg" alt=""></a></li>
-									  <li><a href="#"><img src="/forum-system/Public/Forum/images/4c.jpg" alt=""></a></li>
-									  <li><a href="#"><img src="/forum-system/Public/Forum/images/5c.jpg" alt=""></a></li>
-									  <li><a href="#"><img src="/forum-system/Public/Forum/images/6c.jpg" alt=""></a></li>
-									</ul>
+
+	<div class="xq_bag nav" id="bar3">
+		<ul class="xq_navbar">
+			<?php if(is_array($list)): foreach($list as $key=>$it): ?><li class="xq_navli"><a href="<?php echo U('Forum/MainPost/order');?>?for_class=<?php echo ($it["for_class"]); ?>"><?php echo ($it["for_class"]); ?></a></li><?php endforeach; endif; ?>
+		</ul>
+	</div>
+
+
+	<div class="demo demo2">
+		<div class="BreakingNewsController easing" id="breakingnews2">
+			<a href="<?php echo U('forum/MainPost/circular');?>"><div class="bn-title"></div></a>
+			<ul id="abc">
+				<?php if(is_array($circular)): foreach($circular as $key=>$it): ?><li><a href="<?php echo U('Forum/MainPost/showCircular');?>?for_num=<?php echo ($it["for_num"]); ?>" target="_blank"><?php echo ($it["for_title"]); ?></a></li><?php endforeach; endif; ?>
+			</ul>
+			<div class="bn-arrows"><span class="bn-arrows-left"></span><span class="bn-arrows-right"></span></div>
+		</div>
+	</div>
+
+	<div style="margin-left: 15%;margin-top: 10px;"><?php echo ($page); ?></div>
+
+	<br>
+	<?php if(is_array($list_post)): foreach($list_post as $key=>$it): ?><div class="item" id="first-item">
+			<div class="d1">
+				<img src="/forum-system/Public/Forum/image/<?php echo ($it["for_head"]); ?>" class="img-rounded">
+				<span><font color="#666699">&nbsp;<?php echo ($it["for_level"]); ?>&nbsp;级</font></span>
+			</div>
+
+			<div style="float: right;"><?php echo ($it["for_class"]); ?></div>
+			<div class="title">
+				<span id="one" class="">
+					<a href="<?php echo U('Forum/ReplyPost/index');?>?for_num=<?php echo ($it["for_num"]); ?>" title="查看详情"><?php echo ($it["for_title"]); ?></a>
+				</span>
+			</div>
+
+			<div class="feed-meta">
+				<div class="zm-item-meta answer-actions clearfix js-contentActions">
+					<div class="zm-meta-panel">
+
+						<span>
+							<a class="author-link" title="查看用户详情" data-hovercard="" target="_blank" href="<?php echo U('Forum/UserDetail/show');?>?ID=<?php echo ($it["for_id"]); ?>"><?php echo ($it["for_name"]); ?></a>
+						</span>
+						<span itemprop="url" class="answer-date-link meta-item" data-tooltip="" target="_blank">编辑于：<?php echo ($it["for_time"]); ?></span>
+						<a href="<?php echo U('Forum/ReplyPost/index');?>?for_num=<?php echo ($it["for_num"]); ?>" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">查看详情</a>
+
+						<span id="r_">
+							<span class="zg-bull zu-autohide"><?php echo ($it["for_join"]); ?> 评论</span>
+							<span class="zg-bull zu-autohide">&bull; <?php echo ($it["for_up"]); ?></span>
+							<a href="<?php echo U('Forum/Operate/mainUp');?>?for_num=<?php echo ($it["for_num"]); ?>" name="" class="">
+								<i class="z-icon-comment"></i>
+								<span id="zan" onclick="zan_click('#<?php echo ($it["for_num"]); ?>')"> 点赞</span></a>
+								<span class="zg-bull zu-autohide">&bull; <?php echo ($it["for_down"]); ?></span>
+								<a href="<?php echo U('Forum/Operate/mainDown');?>?for_num=<?php echo ($it["for_num"]); ?>" name="" class="">
+									<i class="z-icon-comment"></i>
+									<span id="zan" onclick="zan_click('#<?php echo ($it["for_num"]); ?>')"> 板砖</span></a>
+									&nbsp;&bull; &nbsp;<span class="zg-bull zu-autohide"> <?php echo ($it["for_report"]); ?></span>
+									<a href="<?php echo U('Forum/Operate/mainReport');?>?for_num=<?php echo ($it["for_num"]); ?>" name="" class="">
+										<i class="z-icon-comment"></i><span id="<?php echo ($it["for_num"]); ?>"></span> <span id="zan" onclick="zan_click('#<?php echo ($it["for_num"]); ?>')">    <font color="#FF0000">举报</font></span></a>
+
+									</span>
+
 								</div>
-								<div class="strip1"> </div>
-								<!-- banner-bottom-grids -->
-								<div class="banner-bottom-grids">
-									<!-- banner-bottom-left -->
-									<div class="col-md-8 banner-bottom-left">
-										<div class="banner-bottom-left-grids">
-											<div class="col-md-6 banner-left-grid">
-												<h3>Technology</h3>
-												<a href="single.html"><img src="/forum-system/Public/Forum/images/b1.jpg" alt="" /></a>
-												<h4><a href="single.html">Silicon Valley Shows Signs of Dot-Com Frenzy</a></h4>
-												<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-												<p class="text">Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur...</p>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b6.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b5.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-											</div>
-											<div class="col-md-6 banner-left-grid">
-												<h3>Entertainment</h3>
-												<a href="single.html"><img src="/forum-system/Public/Forum/images/b2.jpg" alt="" /></a>
-												<h4><a href="single.html">Silicon Valley Shows Signs of Dot-Com Frenzy</a></h4>
-												<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-												<p class="text">Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur...</p>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b5.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b6.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="banner-bottom-left-grids">
-											<div class="col-md-6 banner-left-grid">
-												<h3>Technology</h3>
-												<a href="single.html"><img src="/forum-system/Public/Forum/images/b3.jpg" alt="" /></a>
-												<h4><a href="single.html">Silicon Valley Shows Signs of Dot-Com Frenzy</a></h4>
-												<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-												<p class="text">Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur...</p>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b6.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b5.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-											</div>
-											<div class="col-md-6 banner-left-grid">
-												<h3>Entertainment</h3>
-												<a href="single.html"><img src="/forum-system/Public/Forum/images/b4.jpg" alt="" /></a>
-												<h4><a href="single.html">Silicon Valley Shows Signs of Dot-Com Frenzy</a></h4>
-												<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-												<p class="text">Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur...</p>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b5.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-												<div class="blog-grids">
-													<div class="blog-grid-left">
-														<img src="/forum-system/Public/Forum/images/b6.jpg" alt="" />
-													</div>
-													<div class="blog-grid-right">
-														<a href="single.html">Fly Fishers Serving as Transports for Noxious Little Invaders</a>
-														<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<!-- post -->
-										<div class="post">
-											<h3>Latest Posts</h3>
-											<div class="post-grids">
-												<div class="col-md-4 post-left">
-													<a href="single.html"><img src="/forum-system/Public/Forum/images/p1.jpg" alt="" /></a>
-												</div>
-												<div class="col-md-8 post-right">
-													<h4><a href="single.html">Silicon Valley Shows Signs of Dot-Com Frenzy</a></h4>
-													<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													<p class="text">Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur...</p>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
-											<div class="post-grids">
-												<div class="col-md-4 post-left">
-													<a href="single.html"><img src="/forum-system/Public/Forum/images/p2.jpg" alt="" /></a>
-												</div>
-												<div class="col-md-8 post-right">
-													<h4><a href="single.html">Silicon Valley Shows Signs of Dot-Com Frenzy</a></h4>
-													<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													<p class="text">Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur...</p>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
-											<div class="post-grids">
-												<div class="col-md-4 post-left">
-													<a href="single.html"><img src="/forum-system/Public/Forum/images/p3.jpg" alt="" /></a>
-												</div>
-												<div class="col-md-8 post-right">
-													<h4><a href="#">Silicon Valley Shows Signs of Dot-Com Frenzy</a></h4>
-													<p class="comments">August 4 2010, <a href="#">8 Comments</a></p>
-													<p class="text">Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur...</p>
-												</div>
-												<div class="clearfix"> </div>
-											</div>
-										</div>
-										<!-- //post -->
-									</div>
-									<!-- //banner-bottom-left -->
-									<!-- banner-bottom-right -->
-									<div class="col-md-4 banner-bottom-right">
-										<div class="banner-bottom-left-grids">
-											<div class="search">
-												<form>
-													<input type="text" value="to search, type and hit enter" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'to search, type and hit enter';}" required="">
-												</form>
-											</div>
-											<div class="advertisement">
-												<h3>Advertisement</h3>
-												<p>300 x 250</p>
-											</div>
-											<div class="sponsors">
-												<h3>Sponsors</h3>
-												<div class="sponsors-grids">
-													<div class="sponsors-grid-left">
-														<div class="sponsors-grid">
-															<p>125 x 125</p>
-														</div>
-													</div>
-													<div class="sponsors-grid-left">
-														<div class="sponsors-grid">
-															<p>125 x 125</p>
-														</div>
-													</div>
-													<div class="clearfix"> </div>
-												</div>
-											</div>
-											<div class="video">
-												<h3>Featured Video</h3>
-													<iframe src="https://player.vimeo.com/video/4717303" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-											</div>
-											<div class="twitter">
-												<h3>Twitter</h3>
-												<div class="twitter-info">
-													<p>Genesis Child Themes at Theme Garden – December 5th --> <a href="#">http://bit.ly/ibXdjY #genesiswp <span>#themegarden</span></a>
-													<span class="time"><a href="#">31 minutes ago</a></span></p>
-												</div>
-												<div class="twitter-info">
-													<p>PhotoPro Genesis Child Theme by Creativity Included Launches at <a href="#">http://bit.ly/9fGbq0 - http://eepurl.com/</a>
-													<span class="time"><a href="#">31 minutes ago</a></span></p>
-												</div>
-												<div class="twitter-info">
-													<p>Latest: Genesis Child Themes at Theme Garden – December 5th - Many of you are aware that Jason Schuller of Press75 r... <a href="#">http://ht.ly/1akn8s</a>
-													<span class="time"><a href="#">31 minutes ago</a></span></p>
-												</div>
-												<div class="twitter-info">
-													<p>The Rockstar Guide to Getting More Traffic, Fame, and Success --> <a href="#">http://bit.ly/hCzF69</a>
-													<span class="time"><a href="#">31 minutes ago</a></span></p>
-												</div>
-											</div>
-											<div class="recent-posts">
-												<h3>Recent Posts</h3>
-												<ul>
-													<li><a href="#">Use Prose to Put the Focus on Your Words</a></li>
-													<li><a href="#">Images Add Life to Your Site</a></li>
-													<li><a href="#">What’s a Framework and Why Do I Need One?</a></li>
-													<li><a href="#">7 Tips for Capturing Short Attention Spans</a></li>
-													<li><a href="#">Making Your Blog a Great Place to Hang Out</a></li>
-											</div>
-										</div>
-									</div>
-									<!-- banner-bottom-right -->
-									<div class="clearfix"> </div>
-									<div class="up-arrow">
-										<a class="scroll" href="#home">Back to Top</a>
-									</div>
-								</div>
-								<!-- //banner-bottom-grids -->
 							</div>
 						</div>
-					</div>
-					<!-- //banner -->
-				</div>
-			</div>
-		 </div>
-	</div>	
-	<!-- //bg-banner -->
-	<div class="footer">
-		<!-- container -->
-		<div class="container">
-			<div class="footer-grids">
-				<div class="col-md-3 recent-posts footer-left">
-					<h3>Recent Posts</h3>
-					<ul>
-						<li><a href="#">Use Prose to Put the Focus on Words</a></li>
-						<li><a href="#">Images Add Life to Your Site</a></li>
-						<li><a href="#">What’s a WordPress theme Framework?</a></li>
-						<li><a href="#">7 Tips for Short Attention Spans</a></li>
-						<li><a href="#">Make Your Blog a Great Place to Hang</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 viewport">
-					<h3>About Viewport</h3>
-					<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+					</div><?php endforeach; endif; ?>
+				<h3 style="margin-left: 70%;"><?php echo ($page); ?></h3>
 
-						<span>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span> 
 
-						Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.
-						Donec id elit non mi porta gravida at eget metus. 
-					</p>
-				</div>
-				<div class="col-md-3 footer-comments">
-					<h3>Comments</h3>
-					<ul>
-						<li>Orman Clark on <a href="#">Sample Post With Threaded Comments</a></li>
-						<li>Orman Clark on <a href="#">Sample Post With Threaded Comments</a></li>
-						<li>Orman Clark on <a href="#">Sample Post With Threaded Comments</a></li>
-						<li>Orman Clark on <a href="#">Sample Post With Threaded Comments</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-logo">
-					<a href="index.html"><img src="/forum-system/Public/Forum/images/f-logo.png" alt="" /></a>
-					<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
-				<div class="clearfix"> </div>
-				<div class="copyright">
-					<p>Template by <a href="http://w3layouts.com/">W3layouts</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+				<script src="/forum-system/Public/Forum/js/xq_navbar.js"></script>
+				<script>
+					$(function(){
+						$("#bar1").xq_navbar({"type":"underline","liwidth":"auto","bgcolor":"#000","hcolor":"#f0f"});
+						$("#bar2").xq_navbar({"type":"beat","liwidth":"avg","bgcolor":"#000","hcolor":"#f0f"});
+						$("#bar3").xq_navbar({"type":"line","liwidth":"avg","bgcolor":"#000"});
+						$("#bar4").xq_navbar({"type":"overline","liwidth":"120","bgcolor":"#000"});
+						$("#bar5").xq_navbar({"type":"block","liwidth":"avg","bgcolor":"#000","hcolor":["blue","rgb(10;,100,100)","red","pink","green","rgba(23,234,22,1)","rgb(230,230,230)"]});
+					});
+					function zan_click(what){
+						var zan=$(what).text();
+						$(what).text(++zan);
+					};
+				</script>
+				<script type="text/javascript">
+					function validateForm()
+					{
+						var x1=document.forms["myForm"]["for_title"].value;
+						if (x1==null || x1=="")
+						{
+							alert("搜索内容不能为空！");
+							return false;
+						}
+					}
+				</script>
+			</body>
+
+			</html>

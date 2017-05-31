@@ -1,5 +1,0 @@
-[ 2017-05-17T15:01:54+08:00 ] ::1 /forum-system/index.php/Forum/UserDetail/image/login.ico
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000322s ]
-INFO: [ app_init ] --END-- [ RunTime:0.002986s ]
-

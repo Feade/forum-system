@@ -127,25 +127,21 @@
 						</span>&#12288;&#12288;&#12288;
 						<span>所属类别：<?php echo ($it["for_class"]); ?>
 						</span>&#12288;&#12288;&#12288;
-						<span class="zg-bull zu-autohide"><?php echo ($it["for_up"]); ?>
-						</span>
-						<a href="<?php echo U('Forum/Operate/replyUp');?>?for_num=<?php echo ($it["for_num"]); ?>" name="" class="">
-							<i class="z-icon-comment"></i>
-							<span id="zan" onclick="zan_click('#<?php echo ($it["for_num"]); ?>')"> 点赞</span>
+						<span><?php echo ($it["for_up"]); ?></span>
+						<a href="<?php echo U('Forum/Operate/replyUp');?>?for_num=<?php echo ($it["for_num"]); ?>">							
+							<span> 点赞</span>
 						</a>
-						<span class="zg-bull zu-autohide">&bull; <?php echo ($it["for_down"]); ?></span>
-						<a href="<?php echo U('Forum/Operate/replyDown');?>?for_num=<?php echo ($it["for_num"]); ?>" name="" class="">
-							<i class="z-icon-comment"></i>
-							<span id="zan" onclick="zan_click('#<?php echo ($it["for_num"]); ?>')"> 板砖</span>
+						<span>&bull; <?php echo ($it["for_down"]); ?></span>
+						<a href="<?php echo U('Forum/Operate/replyDown');?>?for_num=<?php echo ($it["for_num"]); ?>">						
+							<span> 板砖</span>
 						</a>
-						<span class="zg-bull zu-autohide">&bull; <?php echo ($it["for_report"]); ?></span>
-						<a href="<?php echo U('Forum/Operate/replyReport');?>?for_num=<?php echo ($it["for_num"]); ?>" name="" class="">
-							<i class="z-icon-comment"></i>
-							<span id="zan" onclick="zan_click('#<?php echo ($it["for_num"]); ?>')"> 举报</span>
+						<span>&bull; <?php echo ($it["for_report"]); ?></span>
+						<a href="<?php echo U('Forum/Adm/resetReport');?>?status=2&for_num=<?php echo ($it["for_num"]); ?>" name="" title="清零举报值">
+							<span> 举报</span>
 						</a>
 						&nbsp; &nbsp;
-						<a href="<?php echo U('Forum/Adm/deleteReply');?>?for_num=<?php echo ($it["for_num"]); ?>" name="" class="">
-							<i class="z-icon-comment"></i><span id="<?php echo ($it["for_num"]); ?>"></span> <span id="zan" onclick="zan_click('#<?php echo ($it["for_num"]); ?>')">    <font color="#FF0000">删除</font></span>
+						<a href="<?php echo U('Forum/Adm/deleteReply');?>?for_num=<?php echo ($it["for_num"]); ?>">
+							<span><font color="#FF0000">删除</font></span>
 						</a>
 
 					</span>

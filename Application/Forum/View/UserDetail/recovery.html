@@ -16,8 +16,12 @@
 	</script>
 	<style type="text/css">
 		body{
-			margin-left:auto;
-			margin-right:auto;
+			background-image: url(__PUBLIC__/Forum/image/usertimg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        min-height: 1000px;
 			margin-top:50PX;
 			width:100%;
 		}
@@ -150,7 +154,12 @@
 		    margin-right:  5px;
 		    float: right;
 		}
-
+		.zg-bull{
+			color: #CCCCFF;
+		}
+		.time{
+			color: #CCCCFF;
+		}
 	</style>
 	<title>个人中心</title>
 
@@ -202,16 +211,16 @@
 				<div class="feed-meta">
 					<div class="zm-item-meta answer-actions clearfix js-contentActions">
 						<div class="zm-meta-panel">
-							<a itemprop="url" class="answer-date-link meta-item" data-tooltip="" target="_blank" href="">{$it.for_time}</a>
-							<span class="zg-bull zu-autohide">&bull;</span>
+							<a itemprop="url" class="time" data-tooltip="" target="_blank" href="">{$it.for_time}</a>
+							<span class="zg-bull">&bull;</span>
 							<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
 							<i class="z-icon-comment"></i>{$it.for_join} 条评论</a>
-							<span class="zg-bull zu-autohide">&bull;</span>
+							<span class="zg-bull">&bull;</span>
 							<a href="#" name="" class="">
 							<i class="z-icon-comment"></i><span id="{$it.for_num}">{$it.for_up}</span> <span id="zan" onclick="zan_click('#{$it.for_num}')">人赞同</span></a>
-							<span class="zg-bull zu-autohide">&bull;</span>
+							<span class="zg-bull">&bull;</span>
 							<a ><span onclick="show_dele('#sure_{$it.for_num}')">恢复</span></a>
-							<span class="zg-bull zu-autohide">&bull;</span>
+							<span class="zg-bull">&bull;</span>
 							<a class="back" id="sure_{$it.for_num}" href="{:U('Forum/UserDetail/backPost')}?back_main_num={$it.for_num}&back_true=2"><font color="blue">确认恢复</font>&bull;</a>
 							<a href="{:U('Forum/UserDetail/deleteCompletely')}?delete_main_num={$it.for_num}&delete_true=2"><font color="red">彻底删除</font></a>
 						</div>

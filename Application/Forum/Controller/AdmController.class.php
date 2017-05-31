@@ -85,11 +85,12 @@ class AdmController extends BaseController
 		if($Admin->checkPermission())
 		{
 			echo "权限不够";
-			$this->upRecord("添加管理员",$_SESSION['admName'],0);
+			$this->upRecord("添加管理员","尝试添加管理员：".$_POST['adm_name'],0);
 			return ;
 		}
-		$this->upRecord("添加管理员",$_SESSION['admName']);
 		$this->addDate($Admin);
+		if(IS_POST)
+		$this->upRecord("添加管理员","添加管理员：".$_POST['adm_name']);
 	}
 
 	/**
@@ -103,11 +104,12 @@ class AdmController extends BaseController
 		if(D('Adm')->checkPermission())
 		{
 			echo "权限不够";
-			$this->upRecord("删除管理员",$_SESSION['admName'],0);
+			if(IS_POST)$this->upRecord("尝试删除管理员","删除管理员：".$_POST['adm_name']."权限不够",0);
+
 			return ;
 		}
-		$this->upRecord("删除管理员",$_SESSION['admName']);
-		$this->delete(D('Adm'));
+		$this->deleteDate(D('Adm'));
+		if(IS_POST)$this->upRecord("删除管理员","删除管理员：".$_POST['adm_name']);
 	}
 
 
@@ -449,6 +451,44 @@ class AdmController extends BaseController
     {
     	$orderMethod="for_report desc";
     	$this->orderMethod($orderMethod);
+    }
+    public function resetReport()
+    {
+		$condition['for_num']=$_GET['for_num'];
+		$resetReport['for_report']=0;
+    	if($_GET['status']==1)
+    	{
+    		$change=M('tfor_main')->where($condition)->save($resetReport);
+    		if($change)
+			{
+				$title=M('tfor_main')->where($condition)->field('for_title')->find();
+				$this->upRecord("清零举报","清除主贴ID：".$condition['for_num']."标题为：".$title['for_title']."的举报值");
+				$this->success("清零举报成功！");
+			}
+			else
+			{
+				$title=M('tfor_main')->where($condition)->field('for_title')->find();
+				$this->upRecord("清零举报","尝试清除主贴ID：".$condition['for_num']."标题为：".$title['for_title']."的举报值，失败",0);
+				$this->error("清零举报失败！");
+			}
+    	}
+    	if($_GET['status']==2)
+    	{
+    		$change=M('tfor_reply')->where($condition)->save($resetReport);
+    		if($change)
+			{
+				$title=M('tfor_reply')->where($condition)->field('for_floor')->find();
+				$this->upRecord("清零举报","清除回复ID：".$condition['for_num']."楼层为：".$title['for_floor']."的举报值");
+				$this->success("清零举报成功！");
+			}
+			else
+			{
+				$title=M('tfor_reply')->where($condition)->field('for_floor')->find();
+				$this->upRecord("清零举报","尝试清除回复ID：".$condition['for_num']."楼层为：".$title['for_floor']."的举报值，失败",0);
+				$this->error("清零举报失败！");
+			}
+    	}
+
     }
 	/**
      * 管理员检索主贴
@@ -996,7 +1036,7 @@ class AdmController extends BaseController
     	else
     	{
 	        $count =M('tfor_detail')->count();
-	        $Page =getpage($count,10);
+	        $Page =getpage($count,20);
 	        $forumUser=M('tfor_detail')->join('LEFT JOIN tfor_user ON tfor_detail.for_id=tfor_user.for_id')->order('tfor_detail.for_id')->limit($Page->firstRow.','.$Page->listRows)->select();
 	        $this->assign('forumUser',$forumUser);
 	        $this->assign('page',$Page->show());

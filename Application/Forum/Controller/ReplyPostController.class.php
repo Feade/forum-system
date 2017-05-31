@@ -14,6 +14,7 @@ class ReplyPostController extends BaseController
     {
         if(IS_POST)
         {
+            $this->islogin();
             if($_POST['for_text'])
             {
             	$_POST['for_id']=$_SESSION['name'];
@@ -25,9 +26,10 @@ class ReplyPostController extends BaseController
     			$_POST['for_floor']=$addJoin['for_floor'];
                
                 $who=M('tfor_main')->where($main)->field('for_id')->find();
-                $this->updateUserValue($who['for_id'],1,0);
 
-                $this->updateUserValue($_POST['for_id'],1,0);
+                $this->updateUserValue($who['for_id'],1,0);//修改发帖用户经验
+                $this->updateUserValue($_POST['for_id'],1,0);//修改用户经验
+                $this->modifyMessage($who['for_id']);//修改用户未读消息
         		$this->addDate(D('ReplyPost'));
             }
             else

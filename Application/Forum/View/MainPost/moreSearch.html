@@ -4,19 +4,17 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no"/>
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-
 	<link rel="stylesheet" href="__PUBLIC__/Forum/css/xq_navbar.css"/>
-	<!-- <link rel="stylesheet" href="__PUBLIC__/Forum/css/xq.css"/> -->
-
-
 	<style type="text/css">
 		body{
-			background-color: #CCCCCC;
-			margin-left:auto;
-			margin-right:auto;
-			margin-top:20PX;
-			width:90%;
-			height: 1000px;
+			background-image: url(__PUBLIC__/Forum/image/timg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        margin-top:20PX;
+	        width:90%;
+	        min-height: 1000px;
 		}
 		.item{
 			margin:20px auto 20px auto;
@@ -196,11 +194,6 @@
 			var x9=document.forms["myForm"]["for_minute"].value;
 			var x10=document.forms["myForm"]["for_flag"].value;
 
-			// if(x1.length+x2.length+x3.length+x4.length+x5.length+x6.length+x7.length+x8.length+x9.length+x10.length==0)
-			// {
-			// 	alert("搜索内容不能为空！");
-			// 	return false;
-			// }
 			if(x3.length!=0 && isNaN(x3) )
 			{
 				alert("用户id必须是数字");

@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="__PUBLIC__/Forum/css/xq.css"/>
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -22,8 +21,15 @@
 		});
 	</script>
 	<style type="text/css">
-		body{
-			background-color: #CCCCCC;
+		body{			
+			background-image: url(__PUBLIC__/Forum/image/timg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        margin-top:50PX;
+	        width:90%;
+	        min-height: 1000px;
 		}
 		body .item{
 			width:70%;
@@ -127,13 +133,18 @@
 	<title>论坛主页</title>
 </head>
 <body>
-
-	<br><br><br>
-	<form action="{:U('Forum/MainPost/searchMain')}" method="post" class="form-horizontal" name="myForm" onsubmit="return validateForm();">
-		<input type="text" name="for_title" class="input-g" placeholder="搜索主贴">
-		<button type="submit" class="btn">搜索</button>
-	</form>
-	<button class="btn" style="position: fixed;top: 55px;left: 85%; width: 100px;height: 30px;"><a href="{:U('Forum/MainPost/moreSearch')}">使用高级搜索</a></button>
+	<a href="{:U('Forum/MainPost/moreSearch')}"><button class="btn" style="position: fixed;top: 100px;left: 90%; width: 80px;height: 30px;">
+		高级搜索
+	</button></a>
+	<div  style="position: fixed;top: 55px;left: 80%; width: 100px;height: 30px;">
+		<form action="{:U('Forum/MainPost/searchMain')}" method="post" name="myForm" onsubmit="return validateForm();">
+			<input type="text" name="for_title"  placeholder="搜索主贴">
+			<button type="submit" class="btn" style="position: fixed;top: 55px;left: 90%; width: 80px;height: 30px;">搜索</button>
+		</form>
+	</div>
+	<button type="button" style="position: fixed;bottom: 20px;left:  93%; color: #333333;font-weight: 15px;width: 100px;height: 40px;" class="btn btn-default btn-lg">
+		<a href="#top" style="color:  #333333;font-weight: 10px;">返回顶部</a>
+	</button>
 	<div id="flip" class="navigation">
 		<div class="button-navigation">
 			<a href="{:U('Forum/UserDetail/index')}">
@@ -167,9 +178,6 @@
 			<foreach name="list" item="it">
 				<li class="xq_navli"><a href="{:U('Forum/MainPost/order')}?for_class={$it.for_class}">{$it.for_class}</a></li>
 			</foreach>
-			<div class="xq_navli">
-				<a href="{:U('Forum/UserDetail/index')}">个人中心</a>
-			</div>
 		</ul>
 	</div>
 
@@ -220,34 +228,34 @@
 					</div>
 				</foreach>
 				<h3 style="margin-left: 70%;">{$page}</h3>
+<!--
+	<button type="button" style="position: fixed;bottom: 20px;left: 95%; color: #333333;font-weight: 15px;width: 100px;height: 40px;" class="btn btn-default btn-lg"><a href="#top" style="color:  #333333;font-weight: 15px;">返回顶部</a></button> -->
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="__PUBLIC__/Forum/js/xq_navbar.js"></script>
+	<script>
+		$(function(){
+			$("#bar1").xq_navbar({"type":"underline","liwidth":"auto","bgcolor":"#000","hcolor":"#f0f"});
+			$("#bar2").xq_navbar({"type":"beat","liwidth":"avg","bgcolor":"#000","hcolor":"#f0f"});
+			$("#bar3").xq_navbar({"type":"line","liwidth":"avg","bgcolor":"#000"});
+			$("#bar4").xq_navbar({"type":"overline","liwidth":"120","bgcolor":"#000"});
+			$("#bar5").xq_navbar({"type":"block","liwidth":"avg","bgcolor":"#000","hcolor":["blue","rgb(10;,100,100)","red","pink","green","rgba(23,234,22,1)","rgb(230,230,230)"]});
+		});
+		function zan_click(what){
+			var zan=$(what).text();
+			$(what).text(++zan);
+		};
+	</script>
+	<script type="text/javascript">
+		function validateForm()
+		{
+			var x1=document.forms["myForm"]["for_title"].value;
+			if (x1==null || x1=="")
+			{
+				alert("搜索内容不能为空！");
+				return false;
+			}
+		}
+	</script>
+</body>
 
-				<button type="button" style="position: fixed;bottom: 20px;left: 95%; color: #333333;font-weight: 15px;width: 100px;height: 40px;" class="btn btn-default btn-lg"><a href="#top" style="color:  #333333;font-weight: 15px;">返回顶部</a></button>
-				<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-				<script src="__PUBLIC__/Forum/js/xq_navbar.js"></script>
-				<script>
-					$(function(){
-						$("#bar1").xq_navbar({"type":"underline","liwidth":"auto","bgcolor":"#000","hcolor":"#f0f"});
-						$("#bar2").xq_navbar({"type":"beat","liwidth":"avg","bgcolor":"#000","hcolor":"#f0f"});
-						$("#bar3").xq_navbar({"type":"line","liwidth":"avg","bgcolor":"#000"});
-						$("#bar4").xq_navbar({"type":"overline","liwidth":"120","bgcolor":"#000"});
-						$("#bar5").xq_navbar({"type":"block","liwidth":"avg","bgcolor":"#000","hcolor":["blue","rgb(10;,100,100)","red","pink","green","rgba(23,234,22,1)","rgb(230,230,230)"]});
-					});
-					function zan_click(what){
-						var zan=$(what).text();
-						$(what).text(++zan);
-					};
-				</script>
-				<script type="text/javascript">
-					function validateForm()
-					{
-						var x1=document.forms["myForm"]["for_title"].value;
-						if (x1==null || x1=="")
-						{
-							alert("搜索内容不能为空！");
-							return false;
-						}
-					}
-				</script>
-			</body>
-
-			</html>
+</html>

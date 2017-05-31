@@ -16,8 +16,12 @@
 	</script>
 	<style type="text/css">
 		body{
-			margin-left:auto;
-			margin-right:auto;
+			background-image: url(__PUBLIC__/Forum/image/usertimg.jpg);
+	        background-repeat: no-repeat;
+	        background-size: 100% 100%;
+	        margin-left:auto;
+	        margin-right:auto;
+	        min-height: 1000px;
 			margin-top:50PX;
 			width:100%;
 		}
@@ -150,7 +154,12 @@
 		    margin-right:  5px;
 		    float: right;
 		}
-
+		.zg-bull{
+			color: #CCCCFF;
+		}
+		.time{
+			color: #CCCCFF;
+		}
 	</style>
 	<title>个人中心</title>
 
@@ -200,21 +209,21 @@
 				<div class="feed-meta">
 					<div class="zm-item-meta answer-actions clearfix js-contentActions">
 						<div class="zm-meta-panel">
-							<span itemprop="url" class="answer-date-link meta-item" data-tooltip="" target="_blank" style="margin-left: 20px;">编辑于：{$it.for_time}</span>
+							<span itemprop="url" class="time" data-tooltip="" target="_blank" style="margin-left: 20px;">编辑于：{$it.for_time}</span>
 							<a href="{:U('Forum/ReplyPost/index')}?for_num={$it.for_num}" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">查看详情</a>
 
 							<span id="r_">
-								<span class="zg-bull zu-autohide">{$it.for_join}&#12288;评论&#12288;</span>
+								<span class="zg-bull">{$it.for_join}&#12288;评论&#12288;</span>
 
-								<span class="zg-bull zu-autohide">&bull;&#12288;{$it.for_up}&#12288;赞&#12288;</span>
+								<span class="zg-bull">&bull;&#12288;{$it.for_up}&#12288;赞&#12288;</span>
 
-								<span class="zg-bull zu-autohide">&bull;&#12288;{$it.for_down}&#12288;踩&#12288;</span>
+								<span class="zg-bull">&bull;&#12288;{$it.for_down}&#12288;踩&#12288;</span>
 
-								<span class="zg-bull zu-autohide">&bull;&#12288;{$it.for_report}&#12288;举报&#12288;</span>
+								<span class="zg-bull">&bull;&#12288;{$it.for_report}&#12288;举报&#12288;</span>
 								&bull;&#12288;
 								<a href="{:U('Forum/UserDetail/alterPost')}?alter_main_num={$it.for_num}">修改</a>
 								&#12288;
-								<span class="zg-bull zu-autohide">&bull;&#12288;</span>
+								<span class="zg-bull">&bull;&#12288;</span>
 								<a ><span onclick="show_dele('#sure_{$it.for_num}')">删除&#12288;</span></a>
 								&bull;&#12288;
 								<a class="dele" id="sure_{$it.for_num}" href="{:U('Forum/UserDetail/deletePost')}?delete_main_num={$it.for_num}&delete_true=0"><font color="red">确认删除</font></a>
